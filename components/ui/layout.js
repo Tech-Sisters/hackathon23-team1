@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import "./layout.css";
+import Header from "./header";
+// import Footer from "./footer";
 
 const Layout = () => {
   return (
     <div className="layout">
       <Header />
-
-      <Footer />
+      {/* 
+      <Footer /> */}
     </div>
   );
 };

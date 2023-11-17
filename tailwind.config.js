@@ -13,6 +13,10 @@ module.exports = {
         orange: "#E6B566",
         pink: "#E5707E",
       },
+      fontFamily: {
+        montserrat: ["Monstserrat", "sans-serif"],
+        hind: ["Hind", "sans-serif"],
+      },
     },
   },
   plugins: [],
