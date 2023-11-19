@@ -40,13 +40,13 @@ const Input = ({
     <div
       className={clsx(
         mxWt || "max-w-full",
-        "w-full border rounded-[0.25rem] px-4 flex items-center gap-x-3 bg-white relative py-2",
-        isFocused ? "border-[#336CFB]" : "border-[#dde2e5]"
+        "w-full border rounded-[4rem] px-4 flex items-center gap-x-3 bg-lightpink relative py-2 ",
+        isFocused ? "border-pink" : "border-lightpink"
       )}
     >
       {prefix ? prefix : search ? <SearchIcon /> : null}
-      {label ? <label htmlFor={name} className="absolute -top-6 left-0 text-white text-base">{label}</label> : null}
-      <input className="w-full border-none outline-none "
+      {label ? <label htmlFor={name} className="absolute -top-6 left-0 text-black text-base">{label}</label> : null}
+      <input className="w-full border-none outline-none bg-lightpink "
         type={type === "password" && showPassword ? "password" : "text"}
         name={name}
         onFocus={handleFocus}
