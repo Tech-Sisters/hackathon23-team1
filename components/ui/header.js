@@ -16,6 +16,8 @@ const Header = () => {
           src={TogetherAppLogo}
           className="app-logo"
           alt="together-app_logo"
+          width={500}
+          height={500}
         />
         <Nav />
       </div>
