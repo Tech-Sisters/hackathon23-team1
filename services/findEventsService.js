@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import allEvents from "../public/eventsData";
 
 // import bookclub from "/images/book-club.png";
 // import lecture from "/images/lecture.png";
@@ -17,28 +9,10 @@ const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [radius, setRadius] = useState([]);
-  const defaultRadius = 5;
+  const [radius, setRadius] = useState("5");
 
   useEffect(() => {
-    const placeholderEvents = [
-      {
-        id: 1,
-        name: "Girls Book Club",
-        location: { lat: 3.1556, lon: 101.6113 },
-        imageKey: "bookclub",
-        time: "12/12/2023, 17:00",
-        place: "Hameediyah Library",
-      },
-      {
-        id: 2,
-        name: "Lecture",
-        location: { lat: 3.1592, lon: 101.6119 },
-        imageKey: "lecture",
-        time: "20/12/2023, 08:00",
-        place: "Midvalley Mega Mall, Convention Center",
-      },
-    ];
+    const placeholderEvents = allEvents;
 
     console.log("Placeholder events:", placeholderEvents);
 
@@ -59,11 +33,16 @@ const FindEventsService = () => {
     );
   }, []);
 
-  //   useEffect(() => {
-  //     setRadius(defaultRadius);
+  //set the radius state to selected radius value
+  function handleSelectChange(event) {
+    const selectedValue = event.target.value;
+    setRadius(selectedValue);
+    console.log(radius);
+  }
 
-  //     function handleChange() {}
-  //   });
+  //   useEffect(() => {
+  //     console.log("Effect triggered!");
+  //   }, [handleSelectChange]);
 
   //Euclidean formula to calculate the distance between two pairs of coordinates
   const calculateDistance = (location1, location2) => {
@@ -83,12 +62,12 @@ const FindEventsService = () => {
     if (userLocation) {
       const filtered = events.filter((event) => {
         const distance = calculateDistance(userLocation, event.location);
-        return distance <= defaultRadius;
+        return distance <= radius;
       });
       console.log("Filtered events:", filtered);
       setFilteredEvents(filtered);
     }
-  }, [userLocation, events]);
+  }, [userLocation, events, radius]);
 
   const imagePaths = {
     bookclub: "/images/book-club.png",
@@ -96,36 +75,31 @@ const FindEventsService = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto px-[70px] py-[40px]">
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-bold mb-4 text-center">
+        <h2 className="text-2xl font-semibold mb-8 text-center">
           Events within{" "}
-          <div className="inline-block">
-            <Select>
-              <SelectTrigger className="w-[60px] ">
-                <SelectValue placeholder="5" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="5">5</SelectItem>
-                <SelectItem value="10">10</SelectItem>
-                <SelectItem value="15">15</SelectItem>
-                <SelectItem value="20">20</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          {/* <div className="inline" onChange={handleChange} id="radius">
-          {defaultRadius}
-        </div>{" "} */}{" "}
-          miles:
+          <select
+            id="radiusSelect"
+            onChange={handleSelectChange}
+            value={radius}
+            className="px-2 text-base bg-gray-100 border-black cursor-pointer"
+          >
+            <option value="5">5 </option>
+            <option value="10">10 </option>
+            <option value="15">15 </option>
+            <option value="20">20 </option>
+          </select>{" "}
+          miles of you:
         </h2>
       </div>
-      <div className="flex flex-wrap -mx-2">
+      <div className="flex flex-wrap -mx-2  w-full ">
         {filteredEvents.map((event) => (
           <div
             key={event.id}
             className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center"
           >
-            <div className="bg-white p-4 border rounded-md cursor-pointer hover:shadow-lg h-[500px]">
+            <div className="bg-white p-4 border rounded-md cursor-pointer hover:shadow-lg h-full">
               <h3 className="text-lg font-semibold mb-2 ">{event.name}</h3>
 
               <Image
@@ -133,7 +107,7 @@ const FindEventsService = () => {
                 alt="event-image"
                 width={300}
                 height={300}
-                className="w-[300px] h-[300px]"
+                className="w-[300px] h-[200px]"
               />
               <div className="details p-7">
                 <p className="text-gray-600">{`Time: ${event.time}`}</p>
