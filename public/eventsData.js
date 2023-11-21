@@ -9,7 +9,7 @@ const placeholderEvents = [
   },
   {
     id: 2,
-    name: "Lecture",
+    name: "Islamic Lecture",
     location: { lat: 3.1592, lon: 101.6119 },
     imageKey: "lecture",
     time: "20/12/2023, 08:00",

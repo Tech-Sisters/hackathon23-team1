@@ -10,8 +10,8 @@ const Header = () => {
   //   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex flex-col mx-auto h-10 font-montserrat">
-      <div className="logo p-[10px]">
+    <header className="flex flex-col mx-auto h-10 font-montserrat w-screen">
+      <div className="logo pt-2">
         <Image
           src={TogetherAppLogo}
           className="app-logo pl-[20px] py-4 pt-2"

@@ -6,17 +6,17 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <nav className="flex nav-bar invisible md:visible ">
+    <nav className="flex nav-bar invisible md:visible w-full">
       <ul className="nav-list">
         <li>
-          <a href="#find-events" className="find-events">
+          <Link href="/findEvents" className="find-events">
             Find Events
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#create-event" className="create-event">
+          <Link href="/createEvents" className="create-event">
             Create Event
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#help" className="help">
