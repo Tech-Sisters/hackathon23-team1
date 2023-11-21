@@ -40,7 +40,7 @@ const Input = ({
     <div
       className={clsx(
         mxWt || "max-w-full",
-        "w-full border rounded-[4rem] px-4 flex items-center gap-x-3 bg-lightpink relative py-2 ",
+        "w-full border rounded-lg px-4 flex items-center gap-x-3 bg-lightpink relative py-2 ",
         isFocused ? "border-pink" : "border-lightpink"
       )}
     >
