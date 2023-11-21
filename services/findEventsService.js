@@ -8,7 +8,7 @@ const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-
+  const [radius, setRadius] = useState([]);
   const defaultRadius = 5;
 
   useEffect(() => {
@@ -50,6 +50,12 @@ const FindEventsService = () => {
     );
   }, []);
 
+  //   useEffect(() => {
+  //     setRadius(defaultRadius);
+
+  //     function handleChange() {}
+  //   });
+
   //Euclidean formula to calculate the distance between two pairs of coordinates
   const calculateDistance = (location1, location2) => {
     const latDiff = location1.lat - location2.lat;
@@ -83,7 +89,11 @@ const FindEventsService = () => {
   return (
     <div className="container mx-auto p-4 ">
       <h2 className="text-2xl font-bold mb-4 text-center">
-        Events within {defaultRadius} miles:
+        Events within{" "}
+        {/* <div className="inline" onChange={handleChange} id="radius">
+          {defaultRadius}
+        </div>{" "} */}
+        miles:
       </h2>
       <div className="flex flex-wrap -mx-2">
         {filteredEvents.map((event) => (
