@@ -75,10 +75,10 @@ const FindEventsService = () => {
   };
 
   return (
-    <div className="container mx-auto px-[70px] py-[40px]">
+    <div className="container mx-auto px-[70px] py-[40px] ">
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-center">
-          Events within{" "}
+        <h2 className="text-2xl font-semibold mb-8 text-center font-montserrat">
+          GEvents within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
@@ -97,9 +97,9 @@ const FindEventsService = () => {
         {filteredEvents.map((event) => (
           <div
             key={event.id}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center"
+            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center "
           >
-            <div className="bg-white p-4 border rounded-md cursor-pointer hover:shadow-lg h-full">
+            <div className="bg-white p-4 border rounded-md cursor-pointer hover:shadow-lg ">
               <h3 className="text-lg font-semibold mb-2 ">{event.name}</h3>
 
               <Image

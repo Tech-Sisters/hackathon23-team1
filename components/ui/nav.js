@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <nav className="nav-bar invisible md:visible ">
+    <nav className="flex nav-bar invisible md:visible ">
       <ul className="nav-list">
         <li>
           <a href="#find-events" className="find-events">
