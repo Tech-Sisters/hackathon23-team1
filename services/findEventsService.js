@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // import bookclub from "/images/book-club.png";
 // import lecture from "/images/lecture.png";
@@ -88,13 +97,28 @@ const FindEventsService = () => {
 
   return (
     <div className="container mx-auto p-4 ">
-      <h2 className="text-2xl font-bold mb-4 text-center">
-        Events within{" "}
-        {/* <div className="inline" onChange={handleChange} id="radius">
+      <div className="flex items-center justify-center">
+        <h2 className="text-2xl font-bold mb-4 text-center">
+          Events within{" "}
+          <div className="inline-block">
+            <Select>
+              <SelectTrigger className="w-[60px] ">
+                <SelectValue placeholder="5" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="5">5</SelectItem>
+                <SelectItem value="10">10</SelectItem>
+                <SelectItem value="15">15</SelectItem>
+                <SelectItem value="20">20</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* <div className="inline" onChange={handleChange} id="radius">
           {defaultRadius}
-        </div>{" "} */}
-        miles:
-      </h2>
+        </div>{" "} */}{" "}
+          miles:
+        </h2>
+      </div>
       <div className="flex flex-wrap -mx-2">
         {filteredEvents.map((event) => (
           <div
