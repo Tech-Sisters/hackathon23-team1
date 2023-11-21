@@ -28,7 +28,7 @@ const Footer = () => {
     <footer
       className={`footer h-10 ${
         showFooter ? "fixed bottom-0" : "absolute hidden"
-      } w-full flex items-end justify-end px-10 pb-2 bg-gray-100 text-gray opacity-30 font-hind text-sm text-pink`}
+      } w-full flex items-end justify-end px-10 pb-2 text-gray opacity-30 font-hind text-sm text-pink`}
     >
       Coprights Reserved - 2023
     </footer>
