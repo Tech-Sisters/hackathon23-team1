@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import allEvents from "../public/eventsData";
 
-// import bookclub from "/images/book-club.png";
-// import lecture from "/images/lecture.png";
-
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [events, setEvents] = useState([]);
@@ -39,10 +36,6 @@ const FindEventsService = () => {
     setRadius(selectedValue);
     console.log(radius);
   }
-
-  //   useEffect(() => {
-  //     console.log("Effect triggered!");
-  //   }, [handleSelectChange]);
 
   //Euclidean formula to calculate the distance between two pairs of coordinates
   const calculateDistance = (location1, location2) => {
@@ -106,7 +99,7 @@ const FindEventsService = () => {
             key={event.id}
             className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center"
           >
-            <div className="bg-white p-4 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-full">
+            <div className="bg-white p-4 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[350px]">
               <h3 className="text-lg font-semibold mb-2 ">{event.name}</h3>
 
               <Image
