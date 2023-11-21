@@ -54,8 +54,16 @@ const placeholderEvents = [
     name: "Food Festival",
     location: { lat: 3.123, lon: 101.597 }, // Within 15 miles of Mutiara Damansara
     imageKey: "foodfestival",
-    time: "10/06/2024, 18:30",
+    time: "10/02/2024, 18:30",
     place: "The Curve",
+  },
+  {
+    id: 13,
+    name: "Kids Meetup",
+    location: { lat: 3.123, lon: 101.597 }, // Within 15 miles of Mutiara Damansara
+    imageKey: "kidsmeetup",
+    time: "17/01/2024, 17:30",
+    place: "Bird Park",
   },
 ];
 

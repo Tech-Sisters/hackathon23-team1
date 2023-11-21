@@ -77,6 +77,8 @@ const FindEventsService = () => {
     techworkshop: "/images/techworkshop.jpg",
     cycling: "/images/cycling.jpg",
     foodfestival: "/images/foodfestival.jpg",
+    cycling: "/images/cycling.jpg",
+    kidsmeetup: "/images/kidsmeetup.jpg",
   };
 
   return (
