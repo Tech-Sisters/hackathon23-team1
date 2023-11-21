@@ -8,6 +8,7 @@ const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
+
   const defaultRadius = 5;
 
   useEffect(() => {
@@ -15,8 +16,7 @@ const FindEventsService = () => {
       {
         id: 1,
         name: "Girls Book Club",
-        location: { lat: 3.1107, lon: 101.6031 },
-        radius: 3,
+        location: { lat: 3.1556, lon: 101.6113 },
         imageKey: "bookclub",
         time: "12/12/2023, 17:00",
         place: "Hameediyah Library",
@@ -24,8 +24,7 @@ const FindEventsService = () => {
       {
         id: 2,
         name: "Lecture",
-        location: { lat: 3.1107, lon: 101.6031 },
-        radius: 8,
+        location: { lat: 3.1592, lon: 101.6119 },
         imageKey: "lecture",
         time: "20/12/2023, 08:00",
         place: "Midvalley Mega Mall, Convention Center",
@@ -51,23 +50,30 @@ const FindEventsService = () => {
     );
   }, []);
 
+  //Euclidean formula to calculate the distance between two pairs of coordinates
+  const calculateDistance = (location1, location2) => {
+    const latDiff = location1.lat - location2.lat;
+    const lonDiff = location1.lon - location2.lon;
+    const distanceInDegrees = Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);
+
+    const earthRadiusInKilometers = 111.319; // 1 degree of earth = 111.319 km
+    const distanceInKilometers = distanceInDegrees * earthRadiusInKilometers;
+    const distanceInMiles = distanceInKilometers * 0.621371;
+
+    return distanceInMiles;
+  };
+
   useEffect(() => {
     // filter events based on user location and radius
     if (userLocation) {
       const filtered = events.filter((event) => {
         const distance = calculateDistance(userLocation, event.location);
-        return distance <= event.radius;
+        return distance <= defaultRadius;
       });
-      console.log("Filtered events:", filteredEvents);
+      console.log("Filtered events:", filtered);
       setFilteredEvents(filtered);
     }
   }, [userLocation, events]);
-
-  const calculateDistance = (location1, location2) => {
-    const latDiff = location1.lat - location2.lat;
-    const lonDiff = location1.lon - location2.lon;
-    return Math.sqrt(latDiff * latDiff + lonDiff * lonDiff);
-  };
 
   const imagePaths = {
     bookclub: "/images/book-club.png",
@@ -77,7 +83,7 @@ const FindEventsService = () => {
   return (
     <div className="container mx-auto p-4 ">
       <h2 className="text-2xl font-bold mb-4 text-center">
-        Events within {defaultRadius} kilometers:
+        Events within {defaultRadius} miles:
       </h2>
       <div className="flex flex-wrap -mx-2">
         {filteredEvents.map((event) => (
@@ -90,12 +96,12 @@ const FindEventsService = () => {
 
               <Image
                 src={imagePaths[event.imageKey]}
+                alt="event-image"
                 width={300}
                 height={300}
                 className="w-[300px] h-[300px]"
               />
               <div className="details p-7">
-                <p className="text-gray-600">{`within ${event.radius} kilometers`}</p>
                 <p className="text-gray-600">{`Time: ${event.time}`}</p>
                 <p className="text-gray-600">{`Location: ${event.place}`}</p>
               </div>
