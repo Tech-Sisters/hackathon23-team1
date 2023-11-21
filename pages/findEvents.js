@@ -8,7 +8,7 @@ export default function FindEvents() {
         {" "}
         <Layout />
       </div>
-      <section className="viewEvents bg-white justify-center flex flex-row mt-[105px] h-full w-full ">
+      <section className="viewEvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
         <div>
           <FindEventsService />
         </div>

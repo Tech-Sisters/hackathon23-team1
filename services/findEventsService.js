@@ -72,13 +72,18 @@ const FindEventsService = () => {
   const imagePaths = {
     bookclub: "/images/book-club.png",
     lecture: "/images/lecture.png",
+    meetup: "/images/meetup.jpg",
+    sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
+    techworkshop: "/images/techworkshop.jpg",
+    cycling: "/images/cycling.jpg",
+    foodfestival: "/images/foodfestival.jpg",
   };
 
   return (
-    <div className="container mx-auto px-[70px] py-[40px] ">
+    <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-center font-montserrat">
-          GEvents within{" "}
+        <h2 className="text-2xl font-semibold mb-8 text-center">
+          Events within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
@@ -97,9 +102,9 @@ const FindEventsService = () => {
         {filteredEvents.map((event) => (
           <div
             key={event.id}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center "
+            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center"
           >
-            <div className="bg-white p-4 border rounded-md cursor-pointer hover:shadow-lg ">
+            <div className="bg-white p-4 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-full">
               <h3 className="text-lg font-semibold mb-2 ">{event.name}</h3>
 
               <Image
@@ -107,9 +112,9 @@ const FindEventsService = () => {
                 alt="event-image"
                 width={300}
                 height={300}
-                className="w-[300px] h-[200px]"
+                className="w-[280px] h-[180px]"
               />
-              <div className="details p-7">
+              <div className="details p-7 font-hind">
                 <p className="text-gray-600">{`Time: ${event.time}`}</p>
                 <p className="text-gray-600">{`Location: ${event.place}`}</p>
               </div>

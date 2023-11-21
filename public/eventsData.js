@@ -17,35 +17,45 @@ const placeholderEvents = [
   },
   {
     id: 3,
-    name: "Art Exhibition",
+    name: "Meetup",
     location: { lat: 3.139, lon: 101.6869 }, // Kuala Lumpur
-    imageKey: "art",
+    imageKey: "meetup",
     time: "15/01/2023, 14:30",
-    place: "National Art Gallery",
+    place: "Segi College",
   },
   {
     id: 8,
-    name: "Movie Night",
-    location: { lat: 3.0433, lon: 101.5197 }, // Subang Jaya
-    imageKey: "movienight",
-    time: "20/03/2023, 19:30",
+    name: "Cycling Challenge",
+    location: { lat: 3.0731, lon: 101.607 }, // Sunway Pyramid Mall
+    imageKey: "cycling",
+    time: "01/04/2024, 07:30",
     place: "Sunway Pyramid Mall",
   },
+
   {
     id: 9,
     name: "Tech Workshop",
     location: { lat: 3.0738, lon: 101.5183 }, // Petaling Jaya
     imageKey: "techworkshop",
-    time: "25/03/2023, 15:00",
+    time: "4/16/2024, 15:00",
     place: "TechHub PJ",
   },
+
   {
     id: 10,
-    name: "Cycling Challenge",
-    location: { lat: 3.329, lon: 101.574 }, // Shah Alam
-    imageKey: "cycling",
-    time: "05/04/2023, 07:30",
-    place: "Shah Alam Extreme Park",
+    name: "Movie Night",
+    location: { lat: 3.329, lon: 101.574 }, // Subang Jaya
+    imageKey: "sunwaypyramidmall",
+    time: "20/03/2024, 19:30",
+    place: "Sunway Pyramid Mall",
+  },
+  {
+    id: 12,
+    name: "Food Festival",
+    location: { lat: 3.123, lon: 101.597 }, // Within 15 miles of Mutiara Damansara
+    imageKey: "foodfestival",
+    time: "10/06/2024, 18:30",
+    place: "The Curve",
   },
 ];
 
