@@ -6,7 +6,6 @@ import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-
     <main className="flex h-screen flex-row items-center pl-40 bg-yellow">
       <div className="logo-container ">
         <div className="logo">
@@ -19,11 +18,11 @@ export default function Home() {
           />
         </div>
 
-        {/* <button>
-        <Link href="/findEvents">click to view events</Link>
-      </button> */}
-      </main>
-      <LoginForm  />
-    </div>
+        <button>
+          <Link href="/findEvents">click to view events</Link>
+        </button>
+      </div>
+      <LoginForm />
+    </main>
   );
 }
