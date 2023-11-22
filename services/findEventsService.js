@@ -13,8 +13,6 @@ const FindEventsService = () => {
   useEffect(() => {
     const placeholderEvents = allEvents;
 
-    console.log("Placeholder events:", placeholderEvents);
-
     //set events state to placeholderEvents
     setEvents(placeholderEvents);
 
@@ -61,6 +59,7 @@ const FindEventsService = () => {
       });
       console.log("Filtered events:", filtered);
       setFilteredEvents(filtered);
+      //   filterByCountry(events);
     }
   }, [userLocation, events, radius]);
 
@@ -74,7 +73,17 @@ const FindEventsService = () => {
     foodfestival: "/images/foodfestival.jpg",
     cycling: "/images/cycling.jpg",
     kidsmeetup: "/images/kidsmeetup.jpg",
+    islamicbookclub: "/images/islamic-bookclub.jpg",
+    londonfoodfestival: "/images/londonfoodfestival.jpg",
+    quranstudy: "/images/quranstudy.jpg",
+    islamicartexhibition: "/images/islamic-artexhibition.jpg",
   };
+
+  //   function filterByCountry(events) {
+  //     const filtered = events.filter((event)=> {
+  //         if event.country
+  //     })
+  //   }
 
   return (
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
@@ -82,7 +91,7 @@ const FindEventsService = () => {
         <form className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8">
           <Image
             src={SearchIcon}
-            className="search-icon  inline-flex opacity-50 w-4 h-5 m-2 pb-1"
+            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
             alt="search-icon"
             width={15}
             height={15}
@@ -105,7 +114,7 @@ const FindEventsService = () => {
         />
       </div>
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-center text-black">
+        <h2 className="text-2xl font-semibold mb-8 text-black ml-20 text-center">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
@@ -145,6 +154,115 @@ const FindEventsService = () => {
             </div>
           </div>
         ))}
+        <div className="flex items-center justify-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-8 mt-8 text-left text-black ml-0">
+              Events in the UK
+            </h2>
+            <div className="flex flex-wrap -mx-2   w-full ">
+              {events.map((event) => (
+                <div
+                  key={event.id}
+                  className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
+                >
+                  {event.country === "United Kingdom" ? (
+                    <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
+                      <Image
+                        src={imagePaths[event.imageKey]}
+                        alt="event-image"
+                        width={300}
+                        height={300}
+                        className="w-[300px] h-[180px] rounded-t-sm"
+                      />
+                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                        {event.name}
+                      </h3>
+                      <div className="details pt-2 px-4 font-hind font-semibold text-left">
+                        <p className="text-gray-800">{event.time}</p>
+                        <p className="text-gray-700">{event.place}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-8 mt-8 text-left text-black ml-0">
+              Events in Malaysia
+            </h2>
+            <div className="flex flex-wrap -mx-2   w-full ">
+              {events.map((event) => (
+                <div
+                  key={event.id}
+                  className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
+                >
+                  {event.country === "Malaysia" ? (
+                    <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
+                      <Image
+                        src={imagePaths[event.imageKey]}
+                        alt="event-image"
+                        width={300}
+                        height={300}
+                        className="w-[300px] h-[180px] rounded-t-sm"
+                      />
+                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                        {event.name}
+                      </h3>
+                      <div className="details pt-2 px-4 font-hind font-semibold text-left">
+                        <p className="text-gray-800">{event.time}</p>
+                        <p className="text-gray-700">{event.place}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-8 mt-8 text-left text-black ml-0">
+              Events in Qatar
+            </h2>
+            <div className="flex flex-wrap -mx-2   w-full ">
+              {events.map((event) => (
+                <div
+                  key={event.id}
+                  className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
+                >
+                  {event.country === "Qatar" ? (
+                    <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
+                      <Image
+                        src={imagePaths[event.imageKey]}
+                        alt="event-image"
+                        width={300}
+                        height={300}
+                        className="w-[300px] h-[180px] rounded-t-sm"
+                      />
+                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                        {event.name}
+                      </h3>
+                      <div className="details pt-2 px-4 font-hind font-semibold text-left">
+                        <p className="text-gray-800">{event.time}</p>
+                        <p className="text-gray-700">{event.place}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
