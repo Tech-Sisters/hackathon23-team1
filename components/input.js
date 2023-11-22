@@ -46,7 +46,7 @@ const Input = ({
     >
       {prefix ? prefix : search ? <SearchIcon /> : null}
       {label ? <label htmlFor={name} className="absolute -top-6 left-0 text-black text-base">{label}</label> : null}
-      <input className="w-full border-none outline-none bg-lightpink "
+      <input className="w-full border-none outline-none bg-lightpink  "
         type={type === "password" && showPassword ? "password" : "text"}
         name={name}
         onFocus={handleFocus}
@@ -71,7 +71,7 @@ const Input = ({
           )}
         </div>
       ) : null}
-      {detail ? <span className="absolute -bottom-7 left-0 text-white text-sm">{detail}</span> : null}
+      {detail ? <span className="absolute -bottom-7 left-0 text-blue-800 text-sm">{detail}</span> : null}
     </div>
   );
 };
