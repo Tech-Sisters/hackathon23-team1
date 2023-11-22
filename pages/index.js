@@ -6,21 +6,21 @@ import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-    <div className="flex flex-row">
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-yellow w-3/4">
-        <div className="logo mt-40">
-        <Image
-          src={TogetherAppLogo}
-          className="app-logo"
-          alt="together-app_logo"
-        />
+    <div className="flex min-h-screen flex-row items-center justify-between  ">
+      <main className="flex min-h-screen items-center p-24 bg-yellow w-3/4">
+        <div className="logo">
+          <Image
+            src={TogetherAppLogo}
+            className="app-logo"
+            alt="together-app_logo"
+          />
         </div>
 
         {/* <button>
         <Link href="/findEvents">click to view events</Link>
       </button> */}
       </main>
-      <LoginForm  />
+      <LoginForm className="bg-white w-1/4 min-h-screen"/>
     </div>
   );
 }

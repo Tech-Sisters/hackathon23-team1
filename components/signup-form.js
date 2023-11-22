@@ -1,10 +1,13 @@
+
 import React from "react";
+
 
 const Signup = () => {
   const [signPayload, setSignPayload] = useState({
     name: "",
     email: "",
     password: "",
+
   });
 
   const [signupStage, setSignupStage] = useState(0);
@@ -16,11 +19,14 @@ const Signup = () => {
     }));
   };
 
+  
   return (
     <div>
-      <Header />
+        <Header/>
+        
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup
+
