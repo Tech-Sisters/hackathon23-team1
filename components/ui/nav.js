@@ -1,22 +1,19 @@
 import React from "react";
-
-// import "@/styles/nav.css";
 import Link from "next/link";
-// import "@/app/globals.css";
 
 const Nav = () => {
   return (
-    <nav className="nav-bar invisible md:visible ">
+    <nav className="flex nav-bar invisible md:visible w-full">
       <ul className="nav-list">
         <li>
-          <a href="#find-events" className="find-events">
+          <Link href="/findEvents" className="find-events">
             Find Events
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#create-event" className="create-event">
-            Create Event
-          </a>
+          <Link href="/createEvents" className="create-event">
+            Create Events
+          </Link>
         </li>
         <li>
           <a href="#help" className="help">
