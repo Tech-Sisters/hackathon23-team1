@@ -4,7 +4,7 @@ const placeholderEvents = [
     name: "Girls Book Club",
     location: { lat: 3.1556, lon: 101.6113 },
     imageKey: "bookclub",
-    time: "12/12/2023, 17:00",
+    time: "Sun, Dec 3 - 12:00 PM",
     place: "Hameediyah Library, PJ",
   },
   {
@@ -12,7 +12,7 @@ const placeholderEvents = [
     name: "Islamic Lecture",
     location: { lat: 3.1592, lon: 101.6119 },
     imageKey: "lecture",
-    time: "20/12/2023, 08:00",
+    time: "Sun, Dec 20 - 08:00 AM",
     place: "Times Square Mall, Convention Center, PJ",
   },
   {
@@ -20,7 +20,7 @@ const placeholderEvents = [
     name: "Meetup",
     location: { lat: 3.139, lon: 101.6869 },
     imageKey: "meetup",
-    time: "15/01/2023, 14:30",
+    time: "Mon, Jan 15 - 02:30 PM",
     place: "Segi College, KL",
   },
   {
@@ -28,41 +28,39 @@ const placeholderEvents = [
     name: "Cycling Challenge",
     location: { lat: 3.0731, lon: 101.607 },
     imageKey: "cycling",
-    time: "01/04/2024, 07:30",
+    time: "Tue, Apr 1 - 07:30 AM",
     place: "Extreme Park, Jaya",
   },
-
   {
     id: 9,
     name: "Tech Workshop",
     location: { lat: 3.0738, lon: 101.5183 },
     imageKey: "techworkshop",
-    time: "4/16/2024, 15:00",
+    time: "Wed, Apr 16 - 03:00 PM",
     place: "TechHub PJ, Jaya",
   },
-
   {
     id: 10,
     name: "Movie Night",
     location: { lat: 3.329, lon: 101.574 },
     imageKey: "sunwaypyramidmall",
-    time: "20/03/2024, 19:30",
+    time: "Thu, Mar 20 - 07:30 PM",
     place: "Valley Mall, Shah Alam",
   },
   {
     id: 12,
     name: "Food Festival",
-    location: { lat: 3.123, lon: 101.597 }, //
+    location: { lat: 3.123, lon: 101.597 },
     imageKey: "foodfestival",
-    time: "10/02/2024, 18:30",
+    time: "Tue, Feb 10 - 06:30 PM",
     place: "The Gardens Mall, PJ",
   },
   {
     id: 13,
     name: "Kids Meetup",
-    location: { lat: 3.123, lon: 101.597 }, //
+    location: { lat: 3.123, lon: 101.597 },
     imageKey: "kidsmeetup",
-    time: "17/01/2024, 17:30",
+    time: "Wed, Jan 17 - 05:30 PM",
     place: "Bird Park, PJ",
   },
 ];
