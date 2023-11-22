@@ -1,4 +1,5 @@
 import Layout from "@/components/ui/layout";
+import FindEventsService from "../services/findEventsService";
 
 export default function FindEvents() {
   return (
@@ -7,8 +8,10 @@ export default function FindEvents() {
         {" "}
         <Layout />
       </div>
-      <section className="viewEvents bg-white justify-center fixed top-[185px] h-full w-full">
-        <h1 className="test font-montserrat">This is the event-viewing page</h1>
+      <section className="viewEvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
+        <div>
+          <FindEventsService />
+        </div>
       </section>
     </main>
   );

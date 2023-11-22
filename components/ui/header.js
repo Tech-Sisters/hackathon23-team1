@@ -10,12 +10,14 @@ const Header = () => {
   //   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex h-10 relative">
-      <div className="logo">
+    <header className="flex flex-col mx-auto h-10 font-montserrat w-screen">
+      <div className="logo pt-2">
         <Image
           src={TogetherAppLogo}
-          className="app-logo"
+          className="app-logo pl-[20px] py-4 pt-2"
           alt="together-app_logo"
+          width={200}
+          height={200}
         />
         <Nav />
       </div>

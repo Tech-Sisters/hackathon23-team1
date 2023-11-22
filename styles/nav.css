@@ -1,6 +1,6 @@
 nav {
-  height: 50px;
-  position: fixed;
+  height: 70px;
+  position: flex;
   top: 135px;
   right: 0px;
   left: 0px;
