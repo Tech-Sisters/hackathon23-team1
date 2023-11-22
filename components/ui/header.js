@@ -4,7 +4,8 @@ import Image from "next/image";
 import TogetherAppLogo from "public/images/logo.png";
 import SearchIcon from "public/images/search-icon.png";
 import Nav from "./nav.js";
-import { Search } from "lucide-react";
+import Link from "next/link";
+
 // import Hamburgerbtn from "public/images/menu-icon.png";
 // import { useState } from "react";
 
@@ -14,13 +15,15 @@ const Header = () => {
   return (
     <header className="flex flex-col mx-auto h-10 font-montserrat w-screen">
       <div className="logo pt-2">
-        <Image
-          src={TogetherAppLogo}
-          className="app-logo pl-[20px] py-4 pt-2"
-          alt="together-app_logo"
-          width={200}
-          height={200}
-        />
+        <Link href="/">
+          <Image
+            src={TogetherAppLogo}
+            className="app-logo pl-[20px] py-4 pt-2"
+            alt="together-app_logo"
+            width={200}
+            height={200}
+          />
+        </Link>
         <div className="search-container absolute right-10 top-5">
           <form className="search flex bg-gray-100 rounded-2xl text-left w-60 pl-2 h-8">
             <Image
@@ -30,10 +33,11 @@ const Header = () => {
               width={15}
               height={15}
             />
+
             <input
               type="text"
               placeholder="Search events"
-              className="bg-transparent inline-flex "
+              className="bg-transparent inline-flex ml-4"
             ></input>
           </form>
         </div>
