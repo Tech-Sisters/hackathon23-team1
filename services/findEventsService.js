@@ -77,7 +77,7 @@ const FindEventsService = () => {
   return (
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-center">
+        <h2 className="text-2xl font-semibold mb-8 text-center text-black">
           Events within{" "}
           <select
             id="radiusSelect"
@@ -97,21 +97,22 @@ const FindEventsService = () => {
         {filteredEvents.map((event) => (
           <div
             key={event.id}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 text-center"
+            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-4 text-center"
           >
-            <div className="bg-white p-4 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[350px]">
-              <h3 className="text-lg font-semibold mb-2 ">{event.name}</h3>
-
+            <h3 className="text-lg font-bold mb-2 mt-3 text-pink">
+              {event.name}
+            </h3>
+            <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
               <Image
                 src={imagePaths[event.imageKey]}
                 alt="event-image"
                 width={300}
                 height={300}
-                className="w-[280px] h-[180px]"
+                className="w-[285px] h-[180px] rounded-t-sm"
               />
-              <div className="details p-7 font-hind">
-                <p className="text-gray-600">{`Time: ${event.time}`}</p>
-                <p className="text-gray-600">{`Location: ${event.place}`}</p>
+              <div className="details pt-5 px-4 font-hind font-semibold text-left">
+                <p className="text-black">{event.time}</p>
+                <p className="text-black">{event.place}</p>
               </div>
             </div>
           </div>
