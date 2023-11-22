@@ -93,24 +93,24 @@ const FindEventsService = () => {
           miles of you:
         </h2>
       </div>
-      <div className="flex flex-wrap -mx-2  w-full ">
+      <div className="flex flex-wrap -mx-2 px-20  w-full ">
         {filteredEvents.map((event) => (
           <div
             key={event.id}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-4 text-center"
+            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
           >
-            <h3 className="text-lg font-bold mb-2 mt-3 text-pink">
-              {event.name}
-            </h3>
             <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
               <Image
                 src={imagePaths[event.imageKey]}
                 alt="event-image"
                 width={300}
                 height={300}
-                className="w-[285px] h-[180px] rounded-t-sm"
+                className="w-[300px] h-[180px] rounded-t-sm"
               />
-              <div className="details pt-5 px-4 font-hind font-semibold text-left">
+              <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                {event.name}
+              </h3>
+              <div className="details pt-2 px-4 font-hind font-semibold text-left">
                 <p className="text-black">{event.time}</p>
                 <p className="text-black">{event.place}</p>
               </div>
