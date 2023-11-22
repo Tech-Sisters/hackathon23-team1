@@ -3,6 +3,7 @@ import Image from "next/image";
 import allEvents from "../public/eventsData";
 import SearchIcon from "public/images/search-icon.png";
 import UserIcon from "public/images/user-icon.png";
+import EventList from "@/components/eventList";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -148,114 +149,13 @@ const FindEventsService = () => {
             </div>
           </div>
         ))}
-
-        <div className="flex justify-left flex-col w-full">
-          <h2 className="text-2xl font-semibold text-black mt-8 text-left ">
-            Events in the UK
-          </h2>
-          <div className="flex flex-wrap -mx-2 px-0 w-full h-min">
-            {events.map((event) => (
-              <div
-                key={event.id}
-                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-2 text-center"
-              >
-                {event.country === "United Kingdom" ? (
-                  <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
-                    <Image
-                      src={imagePaths[event.imageKey]}
-                      alt="event-image"
-                      width={300}
-                      height={300}
-                      className="w-[300px] h-[180px] rounded-t-sm"
-                    />
-                    <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                      {event.name}
-                    </h3>
-                    <div className="details pt-2 px-4 font-hind font-semibold text-left">
-                      <p className="text-gray-800">{event.time}</p>
-                      <p className="text-gray-700">{event.place}</p>
-                    </div>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* <div className="flex items-center justify-center">
-          <div>
-            <h2 className="text-2xl font-semibold mb-8 mt-8 text-left text-black ml-0">
-              Events in Malaysia
-            </h2>
-            <div className="flex flex-wrap -mx-2   w-full ">
-              {events.map((event) => (
-                <div
-                  key={event.id}
-                  className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
-                >
-                  {event.country === "Malaysia" ? (
-                    <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
-                      <Image
-                        src={imagePaths[event.imageKey]}
-                        alt="event-image"
-                        width={300}
-                        height={300}
-                        className="w-[300px] h-[180px] rounded-t-sm"
-                      />
-                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                        {event.name}
-                      </h3>
-                      <div className="details pt-2 px-4 font-hind font-semibold text-left">
-                        <p className="text-gray-800">{event.time}</p>
-                        <p className="text-gray-700">{event.place}</p>
-                      </div>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-        <div className="flex items-center justify-center">
-          <div>
-            <h2 className="text-2xl font-semibold mb-8 mt-8 text-left text-black ml-0">
-              Events in Qatar
-            </h2>
-            <div className="flex flex-wrap -mx-2   w-full ">
-              {events.map((event) => (
-                <div
-                  key={event.id}
-                  className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
-                >
-                  {event.country === "Qatar" ? (
-                    <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
-                      <Image
-                        src={imagePaths[event.imageKey]}
-                        alt="event-image"
-                        width={300}
-                        height={300}
-                        className="w-[300px] h-[180px] rounded-t-sm"
-                      />
-                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                        {event.name}
-                      </h3>
-                      <div className="details pt-2 px-4 font-hind font-semibold text-left">
-                        <p className="text-gray-800">{event.time}</p>
-                        <p className="text-gray-700">{event.place}</p>
-                      </div>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <EventList events={events} imagePaths={imagePaths} country="Malaysia" />
+        <EventList
+          events={events}
+          imagePaths={imagePaths}
+          country="United Kingdom"
+        />
+        <EventList events={events} imagePaths={imagePaths} country="Qatar" />
       </div>
     </div>
   );
