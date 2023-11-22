@@ -15,7 +15,7 @@ const Nav = () => {
         </li>
         <li>
           <Link href="/createEvents" className="create-event">
-            Create Event
+            Create Events
           </Link>
         </li>
         <li>
