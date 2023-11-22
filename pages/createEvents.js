@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Layout from "@/components/ui/layout";
+import CreateEventsService from "../services/createEventsService";
 
 const CreateEvents = () => {
   return (
@@ -8,7 +9,9 @@ const CreateEvents = () => {
         {" "}
         <Layout />
       </div>
-      <section className="viewEvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full "></section>
+      <section className="createvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
+        <CreateEventsService />
+      </section>
     </main>
   );
 };
