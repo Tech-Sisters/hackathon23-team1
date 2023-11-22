@@ -55,7 +55,7 @@ const placeholderEvents = [
   },
   {
     id: 7,
-    name: "Food Festival",
+    name: "Halal Food Festival",
     location: { lat: 3.123, lon: 101.597 },
     imageKey: "foodfestival",
     time: "Tue, Feb 10 - 06:30 PM",
