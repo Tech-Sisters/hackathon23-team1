@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import allEvents from "../public/eventsData";
+import SearchIcon from "public/images/search-icon.png";
+import UserIcon from "public/images/user-icon.png";
+import EventList from "@/components/eventList";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -10,8 +13,6 @@ const FindEventsService = () => {
 
   useEffect(() => {
     const placeholderEvents = allEvents;
-
-    console.log("Placeholder events:", placeholderEvents);
 
     //set events state to placeholderEvents
     setEvents(placeholderEvents);
@@ -59,6 +60,7 @@ const FindEventsService = () => {
       });
       console.log("Filtered events:", filtered);
       setFilteredEvents(filtered);
+      //   filterByCountry(events);
     }
   }, [userLocation, events, radius]);
 
@@ -72,25 +74,55 @@ const FindEventsService = () => {
     foodfestival: "/images/foodfestival.jpg",
     cycling: "/images/cycling.jpg",
     kidsmeetup: "/images/kidsmeetup.jpg",
+    islamicbookclub: "/images/islamic-bookclub.jpg",
+    londonfoodfestival: "/images/londonfoodfestival.jpg",
+    quranstudy: "/images/quranstudy.jpg",
+    islamicartexhibition: "/images/islamic-artexhibition.jpg",
   };
 
   return (
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
+      <div className="search-container absolute right-32 top-5 font-hind">
+        <form className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8">
+          <Image
+            src={SearchIcon}
+            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
+            alt="search-icon"
+            width={15}
+            height={15}
+          />
+
+          <input
+            type="text"
+            placeholder="Search events"
+            className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
+          ></input>
+        </form>
+      </div>
+      <div className="search-container absolute right-20 top-5 font-hind">
+        <Image
+          src={UserIcon}
+          className="user-icon  inline-flex w-[30px]"
+          alt="user-icon"
+          width={25}
+          height={25}
+        />
+      </div>
       <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-center text-black">
-          Events within{" "}
+        <h2 className="text-2xl font-semibold mb-8 text-black ml-20 text-center">
+          Upcoming Events Within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
             value={radius}
-            className="px-2 text-base bg-gray-100 border-black cursor-pointer"
+            className="px-2 text-base bg-gray-100 border-black cursor-pointer w-12"
           >
             <option value="5">5 </option>
             <option value="10">10 </option>
             <option value="15">15 </option>
             <option value="20">20 </option>
           </select>{" "}
-          miles of you:
+          Miles of You:
         </h2>
       </div>
       <div className="flex flex-wrap -mx-2 px-20  w-full ">
@@ -111,12 +143,19 @@ const FindEventsService = () => {
                 {event.name}
               </h3>
               <div className="details pt-2 px-4 font-hind font-semibold text-left">
-                <p className="text-black">{event.time}</p>
-                <p className="text-black">{event.place}</p>
+                <p className="text-gray-800">{event.time}</p>
+                <p className="text-gray-700">{event.place}</p>
               </div>
             </div>
           </div>
         ))}
+        <EventList events={events} imagePaths={imagePaths} country="Malaysia" />
+        <EventList
+          events={events}
+          imagePaths={imagePaths}
+          country="United Kingdom"
+        />
+        <EventList events={events} imagePaths={imagePaths} country="Qatar" />
       </div>
     </div>
   );

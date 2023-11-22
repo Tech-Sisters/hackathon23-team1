@@ -2,7 +2,10 @@
 import React, { use } from "react";
 import Image from "next/image";
 import TogetherAppLogo from "public/images/logo.png";
+import SearchIcon from "public/images/search-icon.png";
 import Nav from "./nav.js";
+import Link from "next/link";
+
 // import Hamburgerbtn from "public/images/menu-icon.png";
 // import { useState } from "react";
 
@@ -12,13 +15,16 @@ const Header = () => {
   return (
     <header className="flex flex-col mx-auto h-10 font-montserrat w-screen">
       <div className="logo pt-2">
-        <Image
-          src={TogetherAppLogo}
-          className="app-logo pl-[20px] py-4 pt-2"
-          alt="together-app_logo"
-          width={200}
-          height={200}
-        />
+        <Link href="/">
+          <Image
+            src={TogetherAppLogo}
+            className="app-logo pl-[20px] py-4 pt-2"
+            alt="together-app_logo"
+            width={200}
+            height={200}
+          />
+        </Link>
+
         <Nav />
       </div>
 
