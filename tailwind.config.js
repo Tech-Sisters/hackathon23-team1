@@ -17,11 +17,20 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
         turquoise: "#A3DDCB",
         yellow: "#E8E9A1",
         orange: "#E6B566",
         pink: "#E5707E",
+        lightpink:"#E67080",
+        lightyellow: "#E5B766",
+        light:"#E9E9A1",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,6 +83,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

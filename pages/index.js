@@ -1,10 +1,12 @@
 // import FindEvents from "./findEvents";
 import Image from "next/image";
-import TogetherAppLogo from "public/images/logo.png";
+import TogetherAppLogo from "public/Images/logo.jpeg";
 import Link from "next/link";
+import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
+
     <main className="flex h-screen flex-row items-center pl-40 bg-yellow">
       <div className="logo-container ">
         <div className="logo">
@@ -17,12 +19,11 @@ export default function Home() {
           />
         </div>
 
-        <form></form>
-
-        <button>
-          <Link href="/findEvents">click to view events</Link>
-        </button>
-      </div>
-    </main>
+        {/* <button>
+        <Link href="/findEvents">click to view events</Link>
+      </button> */}
+      </main>
+      <LoginForm  />
+    </div>
   );
 }
