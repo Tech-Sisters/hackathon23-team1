@@ -21,7 +21,7 @@ const LoginForm = () => {
     <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide">
       <form className="w-full mt-12">
         <div className="w-full flex flex-col gap-y-2">
-          <div className="flex flex-col gap-y-12 mb-6">
+          <div className="flex flex-col gap-y-12 mb-6 ">
             <Input
               label="Email address"
               placeholder="Enter your email address"
@@ -40,7 +40,7 @@ const LoginForm = () => {
             />
           </div>
 
-          <button className="w-full h-10 bg-lightpink rounded-[0.3126rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize">
+          <button className="w-full h-10 border border-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize">
             Login
           </button>
 
@@ -51,9 +51,9 @@ const LoginForm = () => {
               </span>
               <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
             </div> */}
-            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer">
+            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
 
-              <span className="text-orange font-medium">Sign up</span>
+              <span className="text-white font-medium">Sign up</span>
             </div>
           </Link>
         </div>
