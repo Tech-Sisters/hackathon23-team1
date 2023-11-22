@@ -18,7 +18,7 @@ const LoginForm = () => {
     }));
   }
   return (
-    <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide">
+    <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
       <form className="w-full mt-12">
         <div className="w-full flex flex-col gap-y-2">
           <div className="flex flex-col gap-y-12 mb-6 ">
@@ -28,6 +28,7 @@ const LoginForm = () => {
               name="email"
               onChange={handleInputField}
               value={loginPayload.email}
+              
             />
 
             <Input
@@ -37,6 +38,7 @@ const LoginForm = () => {
               name="password"
               onChange={handleInputField}
               value={loginPayload.password}
+              
             />
           </div>
 
