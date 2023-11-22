@@ -2,7 +2,9 @@
 import React, { use } from "react";
 import Image from "next/image";
 import TogetherAppLogo from "public/images/logo.png";
+import SearchIcon from "public/images/search-icon.png";
 import Nav from "./nav.js";
+import { Search } from "lucide-react";
 // import Hamburgerbtn from "public/images/menu-icon.png";
 // import { useState } from "react";
 
@@ -19,6 +21,23 @@ const Header = () => {
           width={200}
           height={200}
         />
+        <div className="search-container absolute right-10 top-5">
+          <form className="search flex bg-gray-100 rounded-2xl text-left w-60 pl-2 h-8">
+            <Image
+              src={SearchIcon}
+              className="search-icon  inline-flex opacity-50 w-10 h-5 m-2 pb-1"
+              alt="search-icon"
+              width={15}
+              height={15}
+            />
+            <input
+              type="text"
+              placeholder="Search events"
+              className="bg-transparent inline-flex "
+            ></input>
+          </form>
+        </div>
+
         <Nav />
       </div>
 

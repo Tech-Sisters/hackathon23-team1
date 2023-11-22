@@ -78,19 +78,19 @@ const FindEventsService = () => {
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
       <div className="flex items-center justify-center">
         <h2 className="text-2xl font-semibold mb-8 text-center text-black">
-          Events within{" "}
+          Upcoming Events Within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
             value={radius}
-            className="px-2 text-base bg-gray-100 border-black cursor-pointer"
+            className="px-2 text-base bg-gray-100 border-black cursor-pointer w-12"
           >
             <option value="5">5 </option>
             <option value="10">10 </option>
             <option value="15">15 </option>
             <option value="20">20 </option>
           </select>{" "}
-          miles of you:
+          Miles of You:
         </h2>
       </div>
       <div className="flex flex-wrap -mx-2 px-20  w-full ">
