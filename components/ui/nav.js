@@ -1,8 +1,5 @@
 import React from "react";
-
-// import "@/styles/nav.css";
 import Link from "next/link";
-// import "@/app/globals.css";
 
 const Nav = () => {
   return (

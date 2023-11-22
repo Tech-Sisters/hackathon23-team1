@@ -10,6 +10,8 @@ const FindEventsService = () => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [radius, setRadius] = useState("5");
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredSearchResults, setFilteredSearchResults] = useState([]);
 
   useEffect(() => {
     const placeholderEvents = allEvents;
@@ -58,12 +60,13 @@ const FindEventsService = () => {
         const distance = calculateDistance(userLocation, event.location);
         return distance <= radius;
       });
-      console.log("Filtered events:", filtered);
+
       setFilteredEvents(filtered);
       //   filterByCountry(events);
     }
   }, [userLocation, events, radius]);
 
+  //static image paths
   const imagePaths = {
     bookclub: "/images/book-club.png",
     lecture: "/images/lecture.png",
@@ -80,10 +83,28 @@ const FindEventsService = () => {
     islamicartexhibition: "/images/islamic-artexhibition.jpg",
   };
 
+  //search button functionality
+  const handleSearchInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    const searchResults = events.filter((event) =>
+      event.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    console.log(filteredSearchResults);
+    setFilteredSearchResults(searchResults);
+  };
+
   return (
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
       <div className="search-container absolute right-32 top-5 font-hind">
-        <form className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8">
+        <form
+          className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8"
+          onSubmit={handleSearchSubmit}
+        >
           <Image
             src={SearchIcon}
             className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
@@ -96,6 +117,8 @@ const FindEventsService = () => {
             type="text"
             placeholder="Search events"
             className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
+            value={searchInput}
+            onChange={handleSearchInputChange}
           ></input>
         </form>
       </div>
@@ -108,8 +131,39 @@ const FindEventsService = () => {
           height={25}
         />
       </div>
-      <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-semibold mb-8 text-black ml-20 text-center">
+      <div className="search-results  mt-5 mx-16  mb-28 justify-left">
+        {/* <h2 className="text-2xl font-semibold text-black text-left">
+          Search Results
+        </h2> */}
+        <div className="flex flex-wrap -mx-2 ">
+          {filteredSearchResults.map((event) => (
+            <div
+              key={event.id}
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 "
+            >
+              <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] w-full">
+                <Image
+                  src={imagePaths[event.imageKey]}
+                  alt="event-image"
+                  width={300}
+                  height={300}
+                  className="w-[300px] h-[180px] rounded-t-sm"
+                />
+                <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">
+                  {event.name}
+                </h3>
+                <div className="details pt-2 px-4 font-hind font-semibold text-left">
+                  <p className="text-gray-800">{event.time}</p>
+                  <p className="text-gray-700">{event.place}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center ">
+        <h2 className="text-2xl font-semibold mb-8 text-black py-0 h-3 text-center ">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
@@ -125,11 +179,12 @@ const FindEventsService = () => {
           Miles of You:
         </h2>
       </div>
-      <div className="flex flex-wrap -mx-2 px-20  w-full ">
+
+      <div className="flex flex-wrap -mx-2 px-20  w-full">
         {filteredEvents.map((event) => (
           <div
             key={event.id}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-10 text-center"
+            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center mb-28"
           >
             <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
               <Image
