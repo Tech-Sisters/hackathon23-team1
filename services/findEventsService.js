@@ -5,11 +5,13 @@ import SearchIcon from "public/images/search-icon.png";
 import UserIcon from "public/images/user-icon.png";
 import ClearIcon from "public/images/clear-icon.png";
 import EventList from "@/components/eventList";
+import LoadingSpinner from "@/components/ui/loadingspinner";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [radius, setRadius] = useState("5");
   const [searchInput, setSearchInput] = useState("");
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
@@ -27,9 +29,11 @@ const FindEventsService = () => {
           lat: position.coords.latitude,
           lon: position.coords.longitude,
         });
+        setLoading(false);
       },
       (error) => {
         console.error("Error getting user location:", error);
+        setLoading(false);
       }
     );
   }, []);
@@ -210,6 +214,11 @@ const FindEventsService = () => {
           Miles of You:
         </h2>
       </div>
+      {loading && (
+        <div className="flex text-center m-4 mb-40 p-5">
+          <LoadingSpinner />
+        </div>
+      )}
       <div className="flex justify-left flex-col w-full mb-28">
         <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
           {filteredEvents.map((event) => (
