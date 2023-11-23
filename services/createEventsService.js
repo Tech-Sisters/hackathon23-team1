@@ -111,7 +111,7 @@ const EventsForm = () => {
           alt="muslim-women"
           width={6855}
           height={6855}
-          className="w-[750px] h-[550px] rounded align-top "
+          className="w-[750px] h-[560px] rounded align-top "
         />
         <div className="text-center font-montserrat font-700  text-white text-2xl  align-bottom mt-3">
           Nurture a community
