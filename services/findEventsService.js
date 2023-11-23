@@ -91,6 +91,8 @@ const FindEventsService = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    const clearButton = document.querySelector(".clear-button");
+    clearButton.classList.remove("invisible");
 
     const searchResults = events.filter((event) =>
       event.name.toLowerCase().includes(searchInput.toLowerCase())
@@ -103,7 +105,7 @@ const FindEventsService = () => {
     setFilteredSearchResults([]);
     const clearButton = document.querySelector(".clear-button");
     console.log(clearButton);
-    clearButton.classList.add("hidden");
+    clearButton.classList.add("invisible");
   };
 
   return (
@@ -153,7 +155,7 @@ const FindEventsService = () => {
             <Image
               src={ClearIcon}
               alt="clear-icon"
-              className="clear-button inline-flex opacity-20"
+              className="clear-button inline-flex invisible opacity-30"
               width={30}
               height={30}
               onClick={handleClear}
