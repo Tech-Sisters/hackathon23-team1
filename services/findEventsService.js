@@ -5,6 +5,7 @@ import SearchIcon from "public/Images/search-icon.png";
 import UserIcon from "public/Images/user-icon.png";
 import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
+import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
 
 const FindEventsService = () => {
@@ -197,8 +198,8 @@ const FindEventsService = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center ">
-        <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-center ">
+      <div className="flex items-center justify-left ">
+        <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-left justify-left">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
@@ -211,7 +212,7 @@ const FindEventsService = () => {
             <option value="15">15 </option>
             <option value="20">20 </option>
           </select>{" "}
-          Miles of You:
+          Miles:
         </h2>
       </div>
       {loading && (

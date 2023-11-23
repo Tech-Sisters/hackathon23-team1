@@ -1,8 +1,12 @@
 "use client";
-import {useState} from "react";
-import  Link  from "next/link";
+import { useState } from "react";
+import Link from "next/link";
 import Input from "./input";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
 
 
 
@@ -17,7 +21,7 @@ const LoginForm = () => {
       ...prevData,
       [name]: value,
     }));
-  }
+  };
   return (
     <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
       <form className="w-full mt-12">
@@ -57,18 +61,14 @@ const LoginForm = () => {
               <span className="text-white font-medium">Sign up</span>
             </Link>
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
         </div>
       </form>
     </div>
   );
-}
+};
 
-export default LoginForm
-
-
-
-
-
-
-
-
+export default LoginForm;

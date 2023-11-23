@@ -117,7 +117,7 @@ const EventsForm = () => {
           Nurture a community
         </div>
         <p className="mb-2 text-md font-montserrat font-600 text-center text-white">
-          Create a place for like-minded people
+          Create a safe place for like-minded people
         </p>
       </div>
     </div>
