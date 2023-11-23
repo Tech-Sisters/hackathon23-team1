@@ -1,8 +1,9 @@
 "use client";
-import {useState} from "react";
-import  Link  from "next/link";
+import { useState } from "react";
+import Link from "next/link";
 import Input from "./input";
-import Signup from "@/pages/signup-form";
+
+
 
 
 
@@ -17,7 +18,7 @@ const LoginForm = () => {
       ...prevData,
       [name]: value,
     }));
-  }
+  };
   return (
     <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
       <form className="w-full mt-12">
@@ -51,25 +52,17 @@ const LoginForm = () => {
             </span>
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
-          
-            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
-              <Link href="/signup-form.js">
+
+          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
+            <Link href="/signup-form">
               <span className="text-white font-medium">Sign up</span>
-              </Link>
-            </div>
-          
+            </Link>
+          </div>
+
         </div>
       </form>
     </div>
   );
-}
+};
 
-export default LoginForm
-
-
-
-
-
-
-
-
+export default LoginForm;
