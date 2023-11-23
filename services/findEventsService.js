@@ -106,8 +106,6 @@ const FindEventsService = () => {
           value.toLowerCase().includes(searchInput.toLowerCase())
       )
     );
-
-    console.log(searchResults);
     setFilteredSearchResults(searchResults);
   };
 
