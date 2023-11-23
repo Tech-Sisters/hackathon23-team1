@@ -8,7 +8,7 @@ const EventList = ({ events, imagePaths, country }) => {
 
   return (
     <div className="flex justify-left flex-col w-full mb-28">
-      <h2 className="text-2xl font-semibold text-black mt-8 text-left">
+      <h2 className="text-2xl font-semibold text-black mt-8 text-left mb-4">
         Events in {country}
       </h2>
       <div className="flex flex-wrap -mx-2 px-0 w-full h-min">

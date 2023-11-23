@@ -4,7 +4,7 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <nav className="flex nav-bar invisible md:visible w-full">
-      <ul className="nav-list">
+      <ul className="nav-list font-semibold font-hind text-lg">
         <li>
           <Link href="/findEvents" className="find-events">
             Find Events
