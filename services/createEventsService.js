@@ -1,27 +1,36 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Image from "next/image";
-import MeetupPhoto from "/public/images/meetup-photo.jpg";
 import MuslimWomen from "/public/images/muslim-women.jpg";
+import allEvents from "../public/eventsData";
 
 const EventsForm = () => {
+  // const allPlaceHolderEvents = allEvents;
   const initialValues = {
     name: "",
     location: "",
     time: "",
-    organisingcommittee: "",
+    organisingcommittee: "", // Fixed typo here
   };
 
+  const [allPlaceHolderEvents, setAllPlaceHolderEvents] = useState([allEvents]);
   const [eventFormValues, setEventFormValues] = useState(initialValues);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(e.target);
     setEventFormValues({ ...eventFormValues, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("h");
+    setAllPlaceHolderEvents([...allPlaceHolderEvents, { ...eventFormValues }]);
+    setEventFormValues(initialValues);
+    console.log(allPlaceHolderEvents);
   };
+
+  useEffect(() => {
+    console.log(allPlaceHolderEvents);
+  }, [allPlaceHolderEvents]);
   return (
     <div className="create-events_container flex flex-wrap my-8 mx-40 w-screen ">
       <form
@@ -38,6 +47,7 @@ const EventsForm = () => {
           <input
             type="text"
             id="name"
+            name="name"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-black leading-tight focus:outline-none focus:border-pink"
           />
@@ -50,6 +60,7 @@ const EventsForm = () => {
           <input
             type="text"
             id="location"
+            name="location"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
           />
@@ -62,6 +73,7 @@ const EventsForm = () => {
           <input
             type="text"
             id="time"
+            name="time"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
           />
@@ -77,6 +89,7 @@ const EventsForm = () => {
           <input
             type="text"
             id="organising-committee"
+            name="organisingcommittee"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
           />
@@ -85,7 +98,7 @@ const EventsForm = () => {
         <div className="flex items-center justify-center">
           <button
             className="bg-orange hover:bg-yellow text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
           >
             Submit
           </button>{" "}
@@ -98,9 +111,9 @@ const EventsForm = () => {
           alt="muslim-women"
           width={6855}
           height={6855}
-          className="w-[750px] h-[550px] rounded align-top "
+          className="w-[750px] h-[560px] rounded align-top "
         />
-        <div className="text-center font-montserrat font-700  text-white text-2xl  align-bottom mt-5">
+        <div className="text-center font-montserrat font-700  text-white text-2xl  align-bottom mt-3">
           Nurture a community
         </div>
         <p className="mb-2 text-md font-montserrat font-600 text-center text-white">
