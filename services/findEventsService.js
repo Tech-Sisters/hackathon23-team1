@@ -14,10 +14,13 @@ const FindEventsService = () => {
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
 
   useEffect(() => {
-    const placeholderEvents = allEvents;
-
-    //set events state to placeholderEvents
-    setEvents(placeholderEvents);
+    fetch("http://localhost:3000/api/getEvents", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((eventsData) => {
+        setEvents(eventsData);
+      });
 
     //get user's current location
     navigator.geolocation.getCurrentPosition(
