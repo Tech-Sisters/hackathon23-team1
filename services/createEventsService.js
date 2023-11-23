@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import Image from "next/image";
-import MuslimWomen from "/public/images/muslim-women.jpg";
+import MuslimWomen from "/public/Images/muslim-women.jpg";
 import allEvents from "../public/eventsData";
 
 const EventsForm = () => {

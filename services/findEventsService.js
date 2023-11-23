@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import allEvents from "../public/eventsData";
-import SearchIcon from "public/images/search-icon.png";
-import UserIcon from "public/images/user-icon.png";
-import ClearIcon from "public/images/clear-icon.png";
+import SearchIcon from "public/Images/search-icon.png";
+import UserIcon from "public/Images/user-icon.png";
+import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
 import LoadingSpinner from "@/components/ui/loadingspinner";
 
