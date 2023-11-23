@@ -2,7 +2,8 @@ const placeholderEvents = [
   {
     id: 1,
     name: "Girls Book Club",
-    location: { lat: 3.1556, lon: 101.6113 },
+    latitude: 3.1556,
+    longitude: 101.6113,
     imageKey: "bookclub",
     time: "Sun, Dec 3 - 12:00 PM",
     place: "Hameediyah Library, PJ",
@@ -11,7 +12,8 @@ const placeholderEvents = [
   {
     id: 2,
     name: "Islamic Lecture",
-    location: { lat: 3.1592, lon: 101.6119 },
+    latitude: 3.1592,
+    longitude: 101.6119,
     imageKey: "lecture",
     time: "Sun, Dec 20 - 08:00 AM",
     place: "Times Square Mall, Convention Center, PJ",
@@ -20,7 +22,8 @@ const placeholderEvents = [
   {
     id: 3,
     name: "Meetup",
-    location: { lat: 3.139, lon: 101.6869 },
+    latitude: 3.139,
+    longitude: 101.6869,
     imageKey: "meetup",
     time: "Mon, Jan 15 - 02:30 PM",
     place: "Segi College, KL",
@@ -29,7 +32,8 @@ const placeholderEvents = [
   {
     id: 4,
     name: "Cycling Challenge",
-    location: { lat: 3.0731, lon: 101.607 },
+    latitude: 3.0731,
+    longitude: 101.607,
     imageKey: "cycling",
     time: "Tue, Apr 1 - 07:30 AM",
     place: "Extreme Park, Jaya",
@@ -38,7 +42,8 @@ const placeholderEvents = [
   {
     id: 5,
     name: "Tech Workshop",
-    location: { lat: 3.0738, lon: 101.5183 },
+    latitude: 3.0738,
+    longitude: 101.5183,
     imageKey: "techworkshop",
     time: "Wed, Apr 16 - 03:00 PM",
     place: "TechHub PJ, Jaya",
@@ -47,7 +52,8 @@ const placeholderEvents = [
   {
     id: 6,
     name: "Movie Night",
-    location: { lat: 3.329, lon: 101.574 },
+    latitude: 3.329,
+    longitude: 101.574,
     imageKey: "sunwaypyramidmall",
     time: "Thu, Mar 20 - 07:30 PM",
     place: "Valley Mall, Shah Alam",
@@ -56,7 +62,8 @@ const placeholderEvents = [
   {
     id: 7,
     name: "Halal Food Festival",
-    location: { lat: 3.123, lon: 101.597 },
+    latitude: 3.123,
+    longitude: 101.597,
     imageKey: "foodfestival",
     time: "Tue, Feb 10 - 06:30 PM",
     place: "The Gardens Mall, PJ",
@@ -65,7 +72,8 @@ const placeholderEvents = [
   {
     id: 8,
     name: "Kids Meetup",
-    location: { lat: 3.123, lon: 101.597 },
+    latitude: 3.123,
+    longitude: 101.597,
     imageKey: "kidsmeetup",
     time: "Wed, Jan 17 - 05:30 PM",
     place: "Bird Park, PJ",
@@ -74,7 +82,8 @@ const placeholderEvents = [
   {
     id: 9,
     name: "Islamic Book Club",
-    location: { lat: 51.509865, lon: -0.118092 }, // London, UK
+    latitude: 51.509865,
+    longitude: -0.118092, // London, UK
     imageKey: "islamicbookclub",
     time: "Sat, Jan 5 - 02:00 PM",
     place: "London Central Mosque",
@@ -83,7 +92,8 @@ const placeholderEvents = [
   {
     id: 10,
     name: "Halal Food Festival",
-    location: { lat: 51.5074, lon: -0.1278 }, // London, UK
+    latitude: 51.5074,
+    longitude: -0.1278, // London, UK
     imageKey: "londonfoodfestival",
     time: "Sun, Feb 10 - 06:30 PM",
     place: "Excel London",
@@ -92,7 +102,8 @@ const placeholderEvents = [
   {
     id: 11,
     name: "Quran Study Meetup",
-    location: { lat: 25.276987, lon: 51.520008 }, // Doha, Qatar
+    latitude: 25.276987,
+    longitude: 51.520008, // Doha, Qatar
     imageKey: "quranstudy",
     time: "Fri, Mar 25 - 03:30 PM",
     place: "Qatar National Library",
@@ -101,7 +112,8 @@ const placeholderEvents = [
   {
     id: 12,
     name: "Islamic Art Exhibition",
-    location: { lat: 25.276987, lon: 51.520008 }, // Doha, Qatar
+    latitude: 25.276987,
+    longitude: 51.520008, // Doha, Qatar
     imageKey: "islamicartexhibition",
     time: "Sat, Apr 5 - 11:00 AM",
     place: "Museum of Islamic Art",

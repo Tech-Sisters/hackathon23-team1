@@ -48,6 +48,7 @@ const LoginForm = () => {
             </span>
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
+
           <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
             <Link href="/signup-form">
               <span className="text-white font-medium">Sign up</span>
