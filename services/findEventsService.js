@@ -94,10 +94,16 @@ const FindEventsService = () => {
     const clearButton = document.querySelector(".clear-button");
     clearButton.classList.remove("invisible");
 
+    //attains an array of all the property values of event object and checks if atleast one of the values includes the search input
     const searchResults = events.filter((event) =>
-      event.name.toLowerCase().includes(searchInput.toLowerCase())
+      Object.values(event).some(
+        (value) =>
+          typeof value === "string" &&
+          value.toLowerCase().includes(searchInput.toLowerCase())
+      )
     );
-    console.log(filteredSearchResults);
+
+    console.log(searchResults);
     setFilteredSearchResults(searchResults);
   };
 
@@ -147,7 +153,7 @@ const FindEventsService = () => {
         {filteredSearchResults.length > 0 && (
           <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
             Search Results
-            <hr className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-20 w-4/5 bg-orange border-orange" />
+            <hr className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 w-4/5 bg-orange border-orange" />
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
