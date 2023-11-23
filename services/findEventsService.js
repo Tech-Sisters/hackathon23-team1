@@ -180,7 +180,7 @@ const FindEventsService = () => {
         </h2>
       </div>
 
-      <div className="flex flex-wrap -mx-2 px-20  w-full">
+      <div className="flex flex-wrap -mx-2 px-0  w-full">
         {filteredEvents.map((event) => (
           <div
             key={event.id}

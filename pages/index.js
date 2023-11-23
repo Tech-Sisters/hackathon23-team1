@@ -1,6 +1,6 @@
 // import FindEvents from "./findEvents";
 import Image from "next/image";
-import TogetherAppLogo from "public/Images/logo.jpeg";
+import TogetherAppLogo from "public/Images/logo.png";
 import Link from "next/link";
 import LoginForm from "@/components/login-form";
 
@@ -11,16 +11,18 @@ export default function Home() {
         <div className="logo">
           <Image
             src={TogetherAppLogo}
-            className="app-logo"
+            className="app-logo "
             alt="together-app_logo"
+            width={500}
+            height={500}
           />
         </div>
 
-        {/* <button>
-        <Link href="/findEvents">click to view events</Link>
-      </button> */}
+        <button>
+          <Link href="/findEvents">click to view events</Link>
+        </button>
       </main>
-      <LoginForm className="bg-white w-1/4 min-h-screen"/>
+      <LoginForm className="bg-white w-1/4 min-h-screen" />
     </div>
   );
 }
