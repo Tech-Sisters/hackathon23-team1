@@ -2,6 +2,7 @@
 import {useState} from "react";
 import  Link  from "next/link";
 import Input from "./input";
+import Signup from "@/pages/signup-form";
 
 
 
@@ -28,7 +29,6 @@ const LoginForm = () => {
               name="email"
               onChange={handleInputField}
               value={loginPayload.email}
-              
             />
 
             <Input
@@ -38,7 +38,6 @@ const LoginForm = () => {
               name="password"
               onChange={handleInputField}
               value={loginPayload.password}
-              
             />
           </div>
 
@@ -46,18 +45,19 @@ const LoginForm = () => {
             Login
           </button>
 
-          <Link href="#">
-            <div className="flex justify-center items-center relative my-1">
-              <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
-                or
-              </span>
-              <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
-            </div>
+          <div className="flex justify-center items-center relative my-1">
+            <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
+              or
+            </span>
+            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
+          </div>
+          
             <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
-
+              <Link href="/signup-form.js">
               <span className="text-white font-medium">Sign up</span>
+              </Link>
             </div>
-          </Link>
+          
         </div>
       </form>
     </div>

@@ -167,14 +167,14 @@ const FindEventsService = () => {
         )}
         <div className="flex flex-wrap -mx-2 relative">
           <button className="inline-flex absolute right-4 top-[-45px] ">
-            <Image
+            {/* <Image
               src={ClearIcon}
               alt="clear-icon"
               className="clear-button inline-flex invisible opacity-30"
               width={30}
               height={30}
               onClick={handleClear}
-            />
+            /> */}
           </button>
           {filteredSearchResults.map((event) => (
             <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 ">
