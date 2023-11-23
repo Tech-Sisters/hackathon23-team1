@@ -119,7 +119,7 @@ const FindEventsService = () => {
   };
 
   return (
-    <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
+    <div className="container mx-auto px-[70px] py-[0px] font-montserrat">
       <div className="search-container absolute right-32 top-5 font-hind">
         <form
           className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8"
