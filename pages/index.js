@@ -16,9 +16,9 @@ export default function Home() {
           />
         </div>
 
-        {/* <button>
+        <button>
         <Link href="/findEvents">click to view events</Link>
-      </button> */}
+      </button>
       </main>
       <LoginForm className="bg-white w-1/4 min-h-screen"/>
     </div>

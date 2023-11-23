@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import {useState} from "react";
-import SearchIcon from "../public/vectors/SearchIcon";
+// import SearchIcon from "../public/vectors/SearchIcon";
 import ViewPasswordIcon from "../public/vectors/EyeIcon";
 import HidePasswordIcon from "../public/vectors/ViewEyeIcon";
 
@@ -40,13 +40,13 @@ const Input = ({
     <div
       className={clsx(
         mxWt || "max-w-full",
-        "w-full border rounded-lg px-4 flex items-center gap-x-3 bg-lightpink relative py-2 ",
+        "w-full border rounded-lg px-4 flex items-center gap-x-3 border-pink relative py-2 ",
         isFocused ? "border-pink" : "border-lightpink"
       )}
     >
       {prefix ? prefix : search ? <SearchIcon /> : null}
       {label ? <label htmlFor={name} className="absolute -top-6 left-0 text-black text-base">{label}</label> : null}
-      <input className="w-full border-none outline-none bg-lightpink  "
+      <input className="w-full border-none outline-none   "
         type={type === "password" && showPassword ? "password" : "text"}
         name={name}
         onFocus={handleFocus}
@@ -59,7 +59,7 @@ const Input = ({
       {suffix ? (
         suffix
       ) : type === "password" ? (
-        <div>
+        <div className="">
           {showPassword ? (
             <span onClick={handleShowPassword}>
               <ViewPasswordIcon />

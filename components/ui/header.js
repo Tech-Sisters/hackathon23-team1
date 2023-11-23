@@ -2,7 +2,7 @@
 import React, { use } from "react";
 import Image from "next/image";
 import TogetherAppLogo from "public/images/logo.png";
-import SearchIcon from "public/images/search-icon.png";
+// import SearchIcon from "public/images/search-icon.png";
 import Nav from "./nav.js";
 import Link from "next/link";
 

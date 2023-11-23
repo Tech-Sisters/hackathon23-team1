@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import allEvents from "../public/eventsData";
-import SearchIcon from "public/images/search-icon.png";
-import UserIcon from "public/images/user-icon.png";
+// import SearchIcon from "public/images/search-icon.png";
+// import UserIcon from "public/images/user-icon.png";
 import EventList from "@/components/eventList";
 
 const FindEventsService = () => {
@@ -105,13 +105,13 @@ const FindEventsService = () => {
           className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8"
           onSubmit={handleSearchSubmit}
         >
-          <Image
+          {/* <Image
             src={SearchIcon}
             className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
             alt="search-icon"
             width={15}
             height={15}
-          />
+          /> */}
 
           <input
             type="text"
@@ -123,13 +123,13 @@ const FindEventsService = () => {
         </form>
       </div>
       <div className="search-container absolute right-20 top-5 font-hind">
-        <Image
+        {/* <Image
           src={UserIcon}
           className="user-icon  inline-flex w-[30px]"
           alt="user-icon"
           width={25}
           height={25}
-        />
+        /> */}
       </div>
       <div className="search-results  mt-5 mx-16  mb-28 justify-left">
         {/* <h2 className="text-2xl font-semibold text-black text-left">
