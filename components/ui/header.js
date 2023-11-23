@@ -13,7 +13,7 @@ const Header = () => {
   //   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex flex-col mx-auto h-10 font-montserrat w-screen">
+    <header className="flex flex-col mx-auto h-10 font-montserrat w-screen bg-yellow">
       <div className="logo pt-2">
         <Link href="/">
           <Image

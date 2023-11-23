@@ -2,7 +2,7 @@
 import {useState} from "react";
 import  Link  from "next/link";
 import Input from "./input";
-import Signup from "@/pages/signup-form";
+
 
 
 
@@ -25,7 +25,7 @@ const LoginForm = () => {
           <div className="flex flex-col gap-y-12 mb-6 ">
             <Input
               label="Email address"
-              placeholder="Enter your email address"
+              placeholder="jannah@noor.com"
               name="email"
               onChange={handleInputField}
               value={loginPayload.email}
@@ -34,7 +34,7 @@ const LoginForm = () => {
             <Input
               type="password"
               label="Password"
-              placeholder="Enter your password"
+              placeholder="* * * * * * * *"
               name="password"
               onChange={handleInputField}
               value={loginPayload.password}
@@ -51,13 +51,12 @@ const LoginForm = () => {
             </span>
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
-          
-            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
-              <Link href="/signup-form.js">
+
+          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
+            <Link href="/signup-form">
               <span className="text-white font-medium">Sign up</span>
-              </Link>
-            </div>
-          
+            </Link>
+          </div>
         </div>
       </form>
     </div>
