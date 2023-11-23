@@ -1,6 +1,7 @@
 import React from "react";
 import {useState} from "react";
-import Input from "./input";
+import Input from "../components/input";
+import Header from "@/components/ui/header";
 
 const Signup = () => {
   const [signPayload, setSignPayload] = useState({
@@ -20,14 +21,14 @@ const Signup = () => {
   return (
     <div>
       <Header />
-      <div className="w-full flex flex-col gap-y-2">
-        <div className="flex flex-col gap-y-12">
+      <div className="w-full flex flex-row gap-y-2">
+        <div className="flex flex-row gap-y-12">
           <div className="flex gap-x-8">
             <Input
               placeholder="FullName"
               name="fullName"
               onChange={handleInputField}
-              value={patientPayload.fullName}
+              value={signPayload.fullName}
             />
           </div>
 
@@ -36,7 +37,7 @@ const Signup = () => {
               placeholder="Email"
               name="email"
               onChange={handleInputField}
-              value={patientPayload.email}
+              value={signPayload.email}
             />
           </div>
 
@@ -58,6 +59,14 @@ const Signup = () => {
               value={signPayload.location}
             />
           </div>
+        </div>
+        <div className="flex items-center justify-center">
+          <button
+            className="bg-turquoise hover:bg-yellow text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>
