@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
-// import SignUp from "";
 
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
