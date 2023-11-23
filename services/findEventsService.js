@@ -3,6 +3,7 @@ import Image from "next/image";
 import allEvents from "../public/eventsData";
 import SearchIcon from "public/images/search-icon.png";
 import UserIcon from "public/images/user-icon.png";
+import ClearIcon from "public/images/clear-icon.png";
 import EventList from "@/components/eventList";
 
 const FindEventsService = () => {
@@ -98,6 +99,13 @@ const FindEventsService = () => {
     setFilteredSearchResults(searchResults);
   };
 
+  const handleClear = () => {
+    setFilteredSearchResults([]);
+    const clearButton = document.querySelector(".clear-button");
+    console.log(clearButton);
+    clearButton.classList.add("hidden");
+  };
+
   return (
     <div className="container mx-auto px-[70px] py-[40px] font-montserrat">
       <div className="search-container absolute right-32 top-5 font-hind">
@@ -118,6 +126,7 @@ const FindEventsService = () => {
             placeholder="Search events"
             className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
             value={searchInput}
+            id="clear-button"
             onChange={handleSearchInputChange}
           ></input>
         </form>
@@ -131,11 +140,25 @@ const FindEventsService = () => {
           height={25}
         />
       </div>
-      <div className="search-results  mt-5 mx-16  mb-28 justify-left">
-        {/* <h2 className="text-2xl font-semibold text-black text-left">
-          Search Results
-        </h2> */}
-        <div className="flex flex-wrap -mx-2 ">
+
+      <div className="search-results mt-5 mb-28 justify-left ">
+        {filteredSearchResults.length > 0 && (
+          <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
+            Search Results
+            <hr className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-20 w-4/5 bg-orange border-orange" />
+          </h2>
+        )}
+        <div className="flex flex-wrap -mx-2 relative">
+          <button className="inline-flex absolute right-4 top-[-45px] ">
+            <Image
+              src={ClearIcon}
+              alt="clear-icon"
+              className="clear-button inline-flex opacity-20"
+              width={30}
+              height={30}
+              onClick={handleClear}
+            />
+          </button>
           {filteredSearchResults.map((event) => (
             <div
               key={event.id}
@@ -147,7 +170,7 @@ const FindEventsService = () => {
                   alt="event-image"
                   width={300}
                   height={300}
-                  className="w-[300px] h-[180px] rounded-t-sm"
+                  className="w-[310px] h-[180px] rounded-t-sm"
                 />
                 <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">
                   {event.name}
@@ -163,7 +186,7 @@ const FindEventsService = () => {
       </div>
 
       <div className="flex items-center justify-center ">
-        <h2 className="text-2xl font-semibold mb-8 text-black py-0 h-3 text-center ">
+        <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-center ">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
