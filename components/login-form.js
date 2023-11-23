@@ -1,9 +1,8 @@
 "use client";
-import {useState} from "react";
-import  Link  from "next/link";
+import { useState } from "react";
+import Link from "next/link";
 import Input from "./input";
-
-
+// import SignUp from "";
 
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
@@ -16,7 +15,7 @@ const LoginForm = () => {
       ...prevData,
       [name]: value,
     }));
-  }
+  };
   return (
     <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
       <form className="w-full mt-12">
@@ -28,7 +27,6 @@ const LoginForm = () => {
               name="email"
               onChange={handleInputField}
               value={loginPayload.email}
-              
             />
 
             <Input
@@ -38,7 +36,6 @@ const LoginForm = () => {
               name="password"
               onChange={handleInputField}
               value={loginPayload.password}
-              
             />
           </div>
 
@@ -46,30 +43,21 @@ const LoginForm = () => {
             Login
           </button>
 
-          <Link href="#">
-            <div className="flex justify-center items-center relative my-1">
-              <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
-                or
-              </span>
-              <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
-            </div>
-            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
-
+          <div className="flex justify-center items-center relative my-1">
+            <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
+              or
+            </span>
+            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
+          </div>
+          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
+            <Link href="/signup-form">
               <span className="text-white font-medium">Sign up</span>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </form>
     </div>
   );
-}
+};
 
-export default LoginForm
-
-
-
-
-
-
-
-
+export default LoginForm;
