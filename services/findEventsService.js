@@ -18,7 +18,7 @@ const FindEventsService = () => {
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/getEvents", {
+    fetch("http://localhost:3000/api/events", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -81,6 +81,7 @@ const FindEventsService = () => {
 
   //static image paths
   const imagePaths = {
+    placeholder: "/images/muslim-women.jpg",
     bookclub: "/images/book-club.png",
     lecture: "/images/lecture.png",
     meetup: "/images/meetup.jpg",
