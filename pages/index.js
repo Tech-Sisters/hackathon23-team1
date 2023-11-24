@@ -1,6 +1,6 @@
 // import FindEvents from "./findEvents";
 import Image from "next/image";
-import TogetherAppLogo from "public/Images/logo.jpeg";
+import TogetherAppLogo from "public/Images/logo.png";
 import Link from "next/link";
 import LoginForm from "@/components/login-form";
 

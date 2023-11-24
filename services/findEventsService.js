@@ -67,8 +67,8 @@ const FindEventsService = () => {
     if (userLocation) {
       const filtered = events.filter((event) => {
         const eventLocation = {
-          lat: event.longitude,
-          lon: event.latitude,
+          lat: event.lat,
+          lon: event.long,
         };
         const distance = calculateDistance(userLocation, eventLocation);
         return distance <= radius;
@@ -178,7 +178,10 @@ const FindEventsService = () => {
             /> */}
           </button>
           {filteredSearchResults.map((event) => (
-            <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 ">
+            <div
+              key={event.id}
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 "
+            >
               <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] w-full">
                 <Image
                   src={imagePaths[event.imageKey]}
@@ -187,7 +190,9 @@ const FindEventsService = () => {
                   height={300}
                   className="w-[310px] h-[180px] rounded-t-sm"
                 />
-                <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">{event.name}</h3>
+                <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">
+                  {event.name}
+                </h3>
                 <div className="details pt-2 px-4 font-hind font-semibold text-left">
                   <p className="text-gray-800">{event.time}</p>
                   <p className="text-gray-700">{event.place}</p>
@@ -247,7 +252,11 @@ const FindEventsService = () => {
           ))}{" "}
         </div>
         <EventList events={events} imagePaths={imagePaths} country="Malaysia" />
-        <EventList events={events} imagePaths={imagePaths} country="United Kingdom" />
+        <EventList
+          events={events}
+          imagePaths={imagePaths}
+          country="United Kingdom"
+        />
         <EventList events={events} imagePaths={imagePaths} country="Qatar" />
       </div>
     </div>
