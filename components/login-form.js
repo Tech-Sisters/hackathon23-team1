@@ -22,7 +22,7 @@ const LoginForm = () => {
           <div className="flex flex-col gap-y-12 mb-6 ">
             <Input
               label="Email address"
-              placeholder="Enter your email address"
+              placeholder="jannah@noor.com"
               name="email"
               onChange={handleInputField}
               value={loginPayload.email}
@@ -31,7 +31,7 @@ const LoginForm = () => {
             <Input
               type="password"
               label="Password"
-              placeholder="Enter your password"
+              placeholder="* * * * * * * *"
               name="password"
               onChange={handleInputField}
               value={loginPayload.password}

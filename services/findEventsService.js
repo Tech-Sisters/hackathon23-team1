@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import allEvents from "../public/eventsData";
-import SearchIcon from "public/images/search-icon.png";
-import UserIcon from "public/images/user-icon.png";
-import ClearIcon from "public/images/clear-icon.png";
+import SearchIcon from "public/Images/search-icon.png";
+import UserIcon from "public/Images/user-icon.png";
+import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
 import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
@@ -18,7 +18,7 @@ const FindEventsService = () => {
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/getEvents", {
+    fetch("http://localhost:3000/api/events", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -81,6 +81,7 @@ const FindEventsService = () => {
 
   //static image paths
   const imagePaths = {
+    placeholder: "/images/muslim-women.jpg",
     bookclub: "/images/book-club.png",
     lecture: "/images/lecture.png",
     meetup: "/images/meetup.jpg",
@@ -110,8 +111,7 @@ const FindEventsService = () => {
     const searchResults = events.filter((event) =>
       Object.values(event).some(
         (value) =>
-          typeof value === "string" &&
-          value.toLowerCase().includes(searchInput.toLowerCase())
+          typeof value === "string" && value.toLowerCase().includes(searchInput.toLowerCase())
       )
     );
     setFilteredSearchResults(searchResults);
@@ -163,19 +163,19 @@ const FindEventsService = () => {
         {filteredSearchResults.length > 0 && (
           <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
             Search Results
-            <hr className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 w-4/5 bg-orange border-orange" />
+            <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 w-4/5 bg-orange border-orange" />
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
           <button className="inline-flex absolute right-4 top-[-45px] ">
-            {/* <Image
+            <Image
               src={ClearIcon}
               alt="clear-icon"
               className="clear-button inline-flex invisible opacity-30"
               width={30}
               height={30}
               onClick={handleClear}
-            /> */}
+            />
           </button>
           {filteredSearchResults.map((event) => (
             <div
@@ -228,10 +228,7 @@ const FindEventsService = () => {
       <div className="flex justify-left flex-col w-full mb-28">
         <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
           {filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
-            >
+            <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center">
               <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
                 <Image
                   src={imagePaths[event.imageKey]}
@@ -240,9 +237,7 @@ const FindEventsService = () => {
                   height={300}
                   className="w-[300px] h-[180px] rounded-t-sm"
                 />
-                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                  {event.name}
-                </h3>
+                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">{event.name}</h3>
                 <div className="details pt-2 px-4 font-hind font-semibold text-left ">
                   <p className="text-gray-800">{event.time}</p>
                   <p className="text-gray-700">{event.place}</p>

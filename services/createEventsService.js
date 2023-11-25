@@ -1,15 +1,16 @@
 import { React, useState, useEffect } from "react";
 import Image from "next/image";
-import MuslimWomen from "/public/images/muslim-women.jpg";
+import MuslimWomen from "/public/Images/muslim-women.jpg";
 import allEvents from "../public/eventsData";
 
 const EventsForm = () => {
   // const allPlaceHolderEvents = allEvents;
   const initialValues = {
     name: "",
-    location: "",
+    place: "",
+    country: "",
     time: "",
-    organisingcommittee: "", // Fixed typo here
+    description: "",
   };
 
   const [allPlaceHolderEvents, setAllPlaceHolderEvents] = useState([allEvents]);
@@ -20,17 +21,23 @@ const EventsForm = () => {
     setEventFormValues({ ...eventFormValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("h");
-    setAllPlaceHolderEvents([...allPlaceHolderEvents, { ...eventFormValues }]);
-    setEventFormValues(initialValues);
-    console.log(allPlaceHolderEvents);
+    console.log(eventFormValues);
+    fetch("http://localhost:3000/api/events", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventFormValues),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+
+    window.location.reload(false); // redirect to another page e.g. events page
   };
 
-  useEffect(() => {
-    console.log(allPlaceHolderEvents);
-  }, [allPlaceHolderEvents]);
   return (
     <div className="create-events_container flex flex-wrap my-8 mx-40 w-screen ">
       <form
@@ -54,13 +61,26 @@ const EventsForm = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="location" className="block text-black font-bold mb-2">
+          <label htmlFor="place" className="block text-black font-bold mb-2">
             Event Location
           </label>
           <input
             type="text"
-            id="location"
-            name="location"
+            id="place"
+            name="place"
+            onChange={handleChange}
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="country" className="block text-black font-bold mb-2">
+            Country
+          </label>
+          <input
+            type="text"
+            id="country"
+            name="country"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
           />
@@ -68,7 +88,7 @@ const EventsForm = () => {
 
         <div className="mb-4">
           <label htmlFor="time" className="block text-black font-bold mb-2">
-            Time
+            Day and Time
           </label>
           <input
             type="text"
@@ -80,16 +100,13 @@ const EventsForm = () => {
         </div>
 
         <div className="mb-6">
-          <label
-            htmlFor="organising-committee"
-            className="block text-black font-bold mb-2"
-          >
-            Organising Committee
+          <label htmlFor="description" className="block text-black font-bold mb-2">
+            Event Description
           </label>
           <input
             type="text"
-            id="organising-committee"
-            name="organisingcommittee"
+            id="description"
+            name="description"
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
           />
