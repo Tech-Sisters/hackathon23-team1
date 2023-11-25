@@ -18,7 +18,7 @@ const FindEventsService = () => {
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/getEvents", {
+    fetch("http://localhost:3000/api/events", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -67,8 +67,8 @@ const FindEventsService = () => {
     if (userLocation) {
       const filtered = events.filter((event) => {
         const eventLocation = {
-          lat: event.longitude,
-          lon: event.latitude,
+          lat: event.lat,
+          lon: event.long,
         };
         const distance = calculateDistance(userLocation, eventLocation);
         return distance <= radius;
@@ -81,6 +81,7 @@ const FindEventsService = () => {
 
   //static image paths
   const imagePaths = {
+    placeholder: "/images/muslim-women.jpg",
     bookclub: "/images/book-club.png",
     lecture: "/images/lecture.png",
     meetup: "/images/meetup.jpg",
@@ -110,8 +111,7 @@ const FindEventsService = () => {
     const searchResults = events.filter((event) =>
       Object.values(event).some(
         (value) =>
-          typeof value === "string" &&
-          value.toLowerCase().includes(searchInput.toLowerCase())
+          typeof value === "string" && value.toLowerCase().includes(searchInput.toLowerCase())
       )
     );
     setFilteredSearchResults(searchResults);
@@ -223,10 +223,7 @@ const FindEventsService = () => {
       <div className="flex justify-left flex-col w-full mb-28">
         <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
           {filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
-            >
+            <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center">
               <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
                 <Image
                   src={imagePaths[event.imageKey]}
@@ -235,9 +232,7 @@ const FindEventsService = () => {
                   height={300}
                   className="w-[300px] h-[180px] rounded-t-sm"
                 />
-                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                  {event.name}
-                </h3>
+                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">{event.name}</h3>
                 <div className="details pt-2 px-4 font-hind font-semibold text-left ">
                   <p className="text-gray-800">{event.time}</p>
                   <p className="text-gray-700">{event.place}</p>

@@ -3,13 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
-
-
-
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
     email: "",
@@ -61,10 +54,6 @@ const LoginForm = () => {
               <span className="text-white font-medium">Sign up</span>
             </Link>
           </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
         </div>
       </form>
     </div>
