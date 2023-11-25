@@ -122,7 +122,7 @@ const FindEventsService = () => {
     });
 
     setFilteredSearchResults(searchResults);
-    handleClearButtonUI(searchResults); // Move this before the return statement
+    handleClearButtonUI(searchResults);
 
     if (searchResults.length === 0) {
       setShowClearButton(true); //
