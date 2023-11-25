@@ -7,6 +7,7 @@ import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
 import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
+import NoResults from "@/components/noResults";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -16,6 +17,8 @@ const FindEventsService = () => {
   const [radius, setRadius] = useState("5");
   const [searchInput, setSearchInput] = useState("");
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
+  const [isSearchSubmitted, setIsSearchSubmitted] = useState(false);
+  const [showClearButton, setShowClearButton] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/events", {
@@ -104,24 +107,49 @@ const FindEventsService = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const clearButton = document.querySelector(".clear-button");
-    clearButton.classList.remove("invisible");
+    setIsSearchSubmitted(true);
 
-    //attains an array of all the property values of event object and checks if atleast one of the values includes the search input
-    const searchResults = events.filter((event) =>
-      Object.values(event).some(
-        (value) =>
-          typeof value === "string" && value.toLowerCase().includes(searchInput.toLowerCase())
-      )
-    );
+    const searchResults = events.filter((event) => {
+      if (Object.values(event)) {
+        return Object.values(event).some(
+          (value) =>
+            typeof value === "string" &&
+            value.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      } else {
+        return false;
+      }
+    });
+
     setFilteredSearchResults(searchResults);
+    handleClearButtonUI(searchResults); // Move this before the return statement
+
+    if (searchResults.length === 0) {
+      setShowClearButton(true); //
+    } else {
+      setShowClearButton(false);
+    }
   };
 
   const handleClear = () => {
     setFilteredSearchResults([]);
+    setIsSearchSubmitted(false);
     const clearButton = document.querySelector(".clear-button");
-    console.log(clearButton);
     clearButton.classList.add("invisible");
+  };
+
+  const handleClearButtonUI = (searchResults) => {
+    const clearButton = document.querySelector(".clear-button");
+
+    if (
+      (searchResults && searchResults.length > 0) ||
+      showClearButton ||
+      searchResults.length === 0
+    ) {
+      clearButton.classList.remove("invisible");
+    } else {
+      clearButton.classList.add("invisible");
+    }
   };
 
   return (
@@ -144,7 +172,7 @@ const FindEventsService = () => {
             placeholder="Search events"
             className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
             value={searchInput}
-            id="clear-button"
+            id="search-button"
             onChange={handleSearchInputChange}
           ></input>
         </form>
@@ -167,7 +195,7 @@ const FindEventsService = () => {
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="inline-flex absolute right-4 top-[-45px] ">
+          <button className="block absolute right-4 top-[-45px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -177,6 +205,9 @@ const FindEventsService = () => {
               onClick={handleClear}
             />
           </button>
+          {isSearchSubmitted && filteredSearchResults.length === 0 && (
+            <NoResults />
+          )}
           {filteredSearchResults.map((event) => (
             <div
               key={event.id}
@@ -227,32 +258,52 @@ const FindEventsService = () => {
       )}
       <div className="flex justify-left flex-col w-full mb-28">
         <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
-          {filteredEvents.map((event) => (
-            <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center">
-              <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
-                <Image
-                  src={imagePaths[event.imageKey]}
-                  alt="event-image"
-                  width={300}
-                  height={300}
-                  className="w-[300px] h-[180px] rounded-t-sm"
-                />
-                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">{event.name}</h3>
-                <div className="details pt-2 px-4 font-hind font-semibold text-left ">
-                  <p className="text-gray-800">{event.time}</p>
-                  <p className="text-gray-700">{event.place}</p>
+          {filteredEvents ? (
+            filteredEvents.map((event) => (
+              <div
+                key={event.id}
+                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
+              >
+                <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
+                  <Image
+                    src={imagePaths[event.imageKey]}
+                    alt="event-image"
+                    width={300}
+                    height={300}
+                    className="w-[300px] h-[180px] rounded-t-sm"
+                  />
+                  <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                    {event.name}
+                  </h3>
+                  <div className="details pt-2 px-4 font-hind font-semibold text-left ">
+                    <p className="text-gray-800">{event.time}</p>
+                    <p className="text-gray-700">{event.place}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}{" "}
+            ))
+          ) : (
+            <NoResults />
+          )}{" "}
         </div>
-        <EventList events={events} imagePaths={imagePaths} country="Malaysia" />
         <EventList
+          key="malaysia"
+          events={events}
+          imagePaths={imagePaths}
+          country="Malaysia"
+        />
+        <EventList
+          key="uk"
           events={events}
           imagePaths={imagePaths}
           country="United Kingdom"
         />
-        <EventList events={events} imagePaths={imagePaths} country="Qatar" />
+        <EventList
+          key="qatar"
+          events={events}
+          imagePaths={imagePaths}
+          country="Qatar"
+        />
       </div>
     </div>
   );
