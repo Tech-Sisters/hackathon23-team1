@@ -181,13 +181,13 @@ const FindEventsService = () => {
 
       <div className="search-results mt-5 mb-28 justify-left ">
         {filteredSearchResults.length > 0 && (
-          <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
+          <h2 className="text-2xl font-semibold ml-2 text-orange text-center md:text-left relative mb-4">
             Search Results
             <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 md:visible invisible w-4/5 bg-orange border-orange" />
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="block absolute right-0 top-[-45px] md:right-4 md:top-[-45px] ">
+          <button className="block absolute right-12 top-[-45px] md:right-0 md:top-[-45px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -203,9 +203,9 @@ const FindEventsService = () => {
           {filteredSearchResults.map((event) => (
             <div
               key={event.id}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 "
+              className="w-[300px] md:w-[300px] justify-center text-center mx-auto px-0 mb-4"
             >
-              <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] w-full">
+              <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                 <Image
                   src={allImagePaths[event.imageKey]}
                   alt="event-image"

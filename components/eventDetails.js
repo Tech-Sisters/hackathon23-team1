@@ -20,12 +20,12 @@ const EventDetails = ({ event, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 overflow-y-auto">
       <div
         className="fixed inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
-      <div className="bg-white p-10  w-[80%] h-[95%] rounded-lg shadow-md relative">
+      <div className="bg-white p-10 w-[90%] h-[90%] md:w-[80%] md:h-[95%] rounded-lg shadow-md relative overflow-y-auto">
         <button className="absolute top-1 right-1" onClick={onClose}>
           <Image
             src={ClearIcon}
