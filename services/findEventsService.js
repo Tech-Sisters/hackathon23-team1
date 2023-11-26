@@ -67,8 +67,8 @@ const FindEventsService = () => {
     if (userLocation) {
       const filtered = events.filter((event) => {
         const eventLocation = {
-          lat: event.longitude,
-          lon: event.latitude,
+          lat: event.lat,
+          lon: event.long,
         };
         const distance = calculateDistance(userLocation, eventLocation);
         return distance <= radius;
@@ -90,10 +90,10 @@ const FindEventsService = () => {
     foodfestival: "/images/foodfestival.jpg",
     cycling: "/images/cycling.jpg",
     kidsmeetup: "/images/kidsmeetup.jpg",
-    islamicbookclub: "/images/islamic-bookclub.jpg",
-    londonfoodfestival: "/images/londonfoodfestival.jpg",
-    quranstudy: "/images/quranstudy.jpg",
-    islamicartexhibition: "/images/islamic-artexhibition.jpg",
+    islamicbookclub: "/Images/islamic-bookclub.jpg",
+    londonfoodfestival: "/Images/londonfoodfestival.jpg",
+    quranstudy: "/Images/quranstudy.jpg",
+    islamicartexhibition: "/Images/islamic-artexhibition.jpg",
   };
 
   //search button functionality

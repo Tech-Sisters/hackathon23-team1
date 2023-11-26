@@ -3,10 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
 
 
 
@@ -45,7 +41,7 @@ const LoginForm = () => {
             />
           </div>
 
-          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize">
+          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize hover:bg-lightyellow">
             Login
           </button>
 
@@ -56,15 +52,11 @@ const LoginForm = () => {
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
 
-          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
+          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3 hover:bg-turquoise">
             <Link href="/signup-form">
               <span className="text-white font-medium">Sign up</span>
             </Link>
           </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d5b86436bf2be1b8d6d65fe6df3676b787060e5
         </div>
       </form>
     </div>
