@@ -187,7 +187,7 @@ const FindEventsService = () => {
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-45px] ">
+          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-30px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
