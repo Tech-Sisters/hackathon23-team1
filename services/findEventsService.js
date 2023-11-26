@@ -227,18 +227,38 @@ const FindEventsService = () => {
       </div>
 
       <div className="flex items-center justify-center md:justify-left">
-        <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-left justify-left">
+        <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left justify-left">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
             value={radius}
-            className="px-2  text-base bg-gray-100 border-black cursor-pointer w-12"
+            className="px-2 rounded text-base bg-gray-100 border-none cursor-pointer w-12"
           >
-            <option value="5">5 </option>
-            <option value="10">10 </option>
-            <option value="15">15 </option>
-            <option value="20">20 </option>
+            <option
+              value="5"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              5{" "}
+            </option>
+            <option
+              value="10"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              10{" "}
+            </option>
+            <option
+              value="15"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              15{" "}
+            </option>
+            <option
+              value="20"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              20{" "}
+            </option>
           </select>{" "}
           Miles:
         </h2>
@@ -249,21 +269,21 @@ const FindEventsService = () => {
         </div>
       )}
       <div className="flex justify-center md:justify-left flex-col w-full mb-28">
-        <div className="flex flex-wrap mx-auto md:-mx-2 px-0 w-full mb-28">
+        <div className="flex flex-wrap -mx-2 px-0 w-full mb-28">
           {filteredEvents ? (
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="w-[400px] md:w-1/2 lg:w-1/3 xl:w-1/4 justify-center text-center"
+                className="w-[300px] md:w-[300px] justify-center text-center mx-auto px-0"
                 onClick={() => handleEventClick(event)}
               >
-                <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
+                <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                   <Image
                     src={allImagePaths[event.imageKey]}
                     alt="event-image"
                     width={300}
                     height={300}
-                    className="w-[100%] h-[200px] md:w-[300px] md:h-[180px] rounded-t-sm"
+                    className="w-[100%] h-[200px] md:w-[400px] md:h-[180px] rounded-t-sm"
                   />
                   <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
                     {event.name}
