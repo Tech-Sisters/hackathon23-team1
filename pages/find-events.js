@@ -9,7 +9,7 @@ export default function FindEvents() {
         <Layout />
       </div>
 
-      <section className="viewEvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
+      <section className="find-events bg-white justify-center flex flex-wrap mt-[105px] p-[5px] h-full w-full ">
         <div>
           <FindEventsService />
         </div>
@@ -17,3 +17,5 @@ export default function FindEvents() {
     </main>
   );
 }
+
+// "attend-button inline-flex items-center ml-auto  px-10 py-1 mx-4 mt-4 h-10 text-white font-hind font-bold bg-turquoise rounded-md hover:opacity-70 text-md"

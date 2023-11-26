@@ -9,6 +9,14 @@ module.exports = {
     "./services/**/*.{js,jsx}",
   ],
   theme: {
+    screens: {
+      sm: "375px",
+      md: "768px",
+      lg: "1024px",
+      laptop: "1240px",
+      xl: "1440px",
+      xxl: "1500px",
+    },
     container: {
       center: true,
       padding: "2rem",

@@ -1,4 +1,3 @@
-// import FindEvents from "./findEvents";
 import Image from "next/image";
 import Link from "next/link";
 import TogetherAppLogo from "public/Images/logo.png";
