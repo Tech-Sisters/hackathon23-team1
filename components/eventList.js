@@ -26,10 +26,10 @@ const EventList = ({ events, imagePaths, country }) => {
         {filterCountryEvents.map((event) => (
           <div
             key={event.id}
-            className="w-[300px] md:w-[300px] justify-center text-center mx-auto px-0 mb-4"
+            className="w-[300px] justify-center text-center mx-auto px-0 "
             onClick={() => handleEventClick(event)}
           >
-            <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
+            <div className="bg-white m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
               <Image
                 src={allImagePaths[event.imageKey]}
                 alt="event-image"
