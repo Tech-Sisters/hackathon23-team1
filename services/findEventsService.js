@@ -146,14 +146,14 @@ const FindEventsService = () => {
 
   return (
     <div className="container mx-auto px-[70px] py-[0px] font-montserrat">
-      <div className="search-container absolute right-32 top-5 font-hind">
+      <div className="search-container absolute top-5 right-[62px] md:right-32 md:top-5 font-hind">
         <form
-          className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8"
+          className="search flex bg-gray-100 rounded-2xl text-left w-[150px] md:w-[400px] pl-2 h-8"
           onSubmit={handleSearchSubmit}
         >
           <Image
             src={SearchIcon}
-            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
+            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1 "
             alt="search-icon"
             width={15}
             height={15}
@@ -161,7 +161,7 @@ const FindEventsService = () => {
 
           <input
             type="text"
-            placeholder="Search events"
+            placeholder="Search"
             className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
             value={searchInput}
             id="search-button"
@@ -172,8 +172,8 @@ const FindEventsService = () => {
       <div className="search-container absolute right-20 top-5 font-hind">
         <Image
           src={UserIcon}
-          className="user-icon  inline-flex w-[30px]"
-          alt="user-icon"
+          className="user-icon  inline-flex w-[30px] md:visible invisible"
+          alt="user-icon "
           width={25}
           height={25}
         />
