@@ -1,26 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ClearIcon from "public/Images/clear-icon.png";
 import allImagePaths from "@/public/imagePaths";
 
 const EventDetails = ({ event, onClose }) => {
-  const [attending, setAttending] = useState(false);
+  const [attending, setAttending] = useState(
+    JSON.parse(localStorage.getItem("attending")) || false
+  );
+
+  useEffect(() => {
+    localStorage.setItem("attending", JSON.stringify(attending), [attending]);
+  });
 
   const handleLikeClick = () => {
     setAttending(!attending);
-
-    const attendButton = document.querySelector(".attend-button");
-
-    if (!attending) {
-      attendButton.textContent = "Attending";
-      attendButton.style.backgroundColor = "#E5707E";
-      setAttending(true);
-      localStorage.setItem("attending", JSON.stringify(attending));
-    } else {
-      attendButton.textContent = "Attend";
-      attendButton.style.backgroundColor = "#A3DDCB";
-      setAttending(false);
-    }
   };
 
   return (
@@ -55,10 +48,12 @@ const EventDetails = ({ event, onClose }) => {
               {event.name}
             </h2>
             <button
-              className="attend-button inline-flex items-center ml-auto  px-10 py-1 mx-4 mt-4 h-10 text-white font-hind font-bold bg-turquoise rounded-md hover:opacity-70 text-md"
+              className={`attend-button inline-flex items-center ml-auto  px-10 py-1 mx-4 mt-4 h-10 text-white font-hind font-bold rounded-md hover:opacity-70 text-md ${
+                attending ? "bg-pink" : "bg-turquoise"
+              }`}
               onClick={handleLikeClick}
             >
-              Attend
+              {attending ? "Attending" : "Attend"}
             </button>
           </div>
           <h3 className="text-md font-semibold mb-2 mt-4 font-montserrat text-pink">
