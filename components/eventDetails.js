@@ -47,7 +47,7 @@ const EventDetails = ({ event, onClose }) => {
 
         <div className="flex flex-col">
           <div className="flex items-center">
-            <h2 className="text-2xl font-semibold my-4 font-montserrat">
+            <h2 className="text-2xl font-semibold my-4 mt-7 font-montserrat">
               {event.name}
             </h2>
             <button
