@@ -27,7 +27,7 @@ const Header = () => {
 
       <div className="visible md:invisible">
         <button
-          className="hamburger-menu bg-none absolute right-5 top-1 mt-5 md:invisible"
+          className="hamburger-menu bg-none absolute right-5 top-1 mt-5 md:invisible "
           onClick={() => setToggle(!toggle)}
         >
           <Image
@@ -42,7 +42,7 @@ const Header = () => {
           <div className="menu-container ">
             <ul className="menu-group absolute flex flex-col items-left top-10 w-full ">
               <button
-                className="close-btn absolute top-[55px] right-[10px] z-10"
+                className="close-btn absolute top-[48px] right-[7px] z-10"
                 onClick={() => setToggle(!toggle)}
               >
                 <Image
@@ -54,20 +54,24 @@ const Header = () => {
                 />
               </button>
               {toggle && (
-                <ul className="menu-group text-black flex flex-col absolute top-10 left-0 b-0 mb-0 bg-pink  w-screen text-sm items-left  font-700 px-3 z-100">
+                <ul className="menu-group text-black flex flex-col absolute top-10 left-0 b-0 mb-0 bg-pink  w-screen text-sm items-left  font-700 px-3 z-100 text-white">
                   <Link href="/find-events">
-                    <li className="menu-group_item pt-6">Find Events</li>
+                    <li className="menu-group_item pt-6 hover:text-yellow">
+                      Find Events
+                    </li>
                   </Link>
                   <Link href="/create-events">
-                    <li className="menu-group_item border-t pt-3">
+                    <li className="menu-group_item border-t pt-3 hover:text-yellow">
                       Create Events
                     </li>
                   </Link>
                   <Link href="/help">
-                    <li className="menu-group_item border-t pt-3">Help</li>
+                    <li className="menu-group_item border-t pt-3 hover:text-yellow">
+                      Help
+                    </li>
                   </Link>
                   <Link href="/">
-                    <li className="menu-group_item border-t pb-2 pt-3">
+                    <li className="menu-group_item border-t pb-2 pt-3 hover:text-yellow">
                       Log In
                     </li>
                   </Link>
