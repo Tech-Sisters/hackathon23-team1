@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import allImagePaths from "/public/imagePaths";
 import ClearIcon from "public/Images/clear-icon.png";
-import allImagePaths from "@/public/imagePaths";
 import DetailsIcon from "/public/Images/details-icon.png";
 import TimeIcon from "/public/Images/time-icon.png";
 import LocationIcon from "/public/Images/location-icon.png";

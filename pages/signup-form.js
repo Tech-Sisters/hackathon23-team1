@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import Input from "../components/input";
-import Header from "@/components/ui/header";
 import Layout from "@/components/ui/layout";
 
 const Signup = () => {
