@@ -145,7 +145,7 @@ const FindEventsService = () => {
   };
 
   return (
-    <div className="container mx-auto px-[70px] py-[0px] font-montserrat">
+    <div className="container mx-auto px-5 md:px-[70px] font-montserrat">
       <div className="search-container absolute top-5 right-[62px] md:right-32 md:top-5 font-hind">
         <form
           className="search flex bg-gray-100 rounded-2xl text-left w-[150px] md:w-[400px] pl-2 h-8"
@@ -226,14 +226,14 @@ const FindEventsService = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-left ">
+      <div className="flex items-center justify-center md:justify-left">
         <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-left justify-left">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
             value={radius}
-            className="px-2 text-base bg-gray-100 border-black cursor-pointer w-12"
+            className="px-2  text-base bg-gray-100 border-black cursor-pointer w-12"
           >
             <option value="5">5 </option>
             <option value="10">10 </option>
@@ -248,22 +248,22 @@ const FindEventsService = () => {
           <LoadingSpinner />
         </div>
       )}
-      <div className="flex justify-left flex-col w-full mb-28">
-        <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
+      <div className="flex justify-center md:justify-left flex-col w-full mb-28">
+        <div className="flex flex-wrap mx-auto md:-mx-2 px-0 w-full mb-28">
           {filteredEvents ? (
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
+                className="w-[400px] md:w-1/2 lg:w-1/3 xl:w-1/4 justify-center text-center"
                 onClick={() => handleEventClick(event)}
               >
-                <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
+                <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
                   <Image
                     src={allImagePaths[event.imageKey]}
                     alt="event-image"
                     width={300}
                     height={300}
-                    className="w-[300px] h-[180px] rounded-t-sm"
+                    className="w-[100%] h-[200px] md:w-[300px] md:h-[180px] rounded-t-sm"
                   />
                   <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
                     {event.name}

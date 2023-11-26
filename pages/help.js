@@ -22,20 +22,20 @@ const Help = () => {
           <div className="accordion_container  justify-center m-10 text-left justify-left shadow-md border-r-white">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="font-hind font-bold text-xl bg- p-10 bg-orange opacity-[70%]">
+                <AccordionTrigger className="font-hind font-bold text-xl bg- px-10 bg-[#fbf4e8] opacity-[70%]">
                   How can I find events in my local area using the app?
                 </AccordionTrigger>
-                <AccordionContent className="font-hind font-semibold text-lg p-10 bg-gray-100">
+                <AccordionContent className="font-hind font-normal text-lg px-10 py-5 bg-cream">
                   You can easily find local events by selecting a distance
                   option and specifying the radius you're interested in. The app
                   will display events happening within that distance.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="font-hind font-bold text-xl bg- p-10 bg-orange opacity-[70%]">
+                <AccordionTrigger className="font-hind font-bold text-xl bg- px-10 bg-[#fbf4e8] opacity-[70%]">
                   How do I create and submit an event on the platform?
                 </AccordionTrigger>
-                <AccordionContent className="font-hind font-semibold text-lg p-10 bg-gray-100">
+                <AccordionContent className="font-hind font-normal text-lg px-10 py-5 bg-cream">
                   To create an event, navigate to the "Create Events" page and
                   provide the specified details including the event name,
                   location, country, day and time and description in the
@@ -45,18 +45,18 @@ const Help = () => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger className="font-hind font-bold text-xl bg- p-10 bg-orange opacity-[70%]">
+                <AccordionTrigger className="font-hind font-bold text-xl bg- px-10 bg-[#fbf4e8] opacity-[70%]">
                   Is it free to attend the events?
                 </AccordionTrigger>
-                <AccordionContent className="ffont-hind font-semibold text-lg p-10 bg-gray-100">
+                <AccordionContent className="ffont-hind font-normal text-lg px-10 py-5 bg-cream">
                   Yes, it is free to attend any event.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger className="font-hind font-bold text-xl bg- p-10 bg-orange opacity-[70%]">
+                <AccordionTrigger className="font-hind font-bold text-xl bg- px-10 bg-[#fbf4e8] opacity-[70%]">
                   What happens when I click "Attend" on an event?
                 </AccordionTrigger>
-                <AccordionContent className="font-hind font-semibold text-lg p-10 bg-gray-100">
+                <AccordionContent className="font-hind font-normal text-lg px-10 py-5 bg-cream">
                   Clicking "Attend" indicates your interest in attending the
                   event. The app will update your status, and you'll be notified
                   of any event updates. It's a great way to show your
