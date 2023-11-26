@@ -22,7 +22,7 @@ const EventList = ({ events, country }) => {
       <h2 className="text-2xl font-semibold text-black mt-8 text-center md:text-left mb-4">
         Events in {country}
       </h2>
-      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important ">
         {filterCountryEvents.map((event) => (
           <div
             key={event.id}

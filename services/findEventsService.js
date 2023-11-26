@@ -226,8 +226,8 @@ const FindEventsService = () => {
         </div>
       </div>
 
-      <div className="flex items-center md:text-left !important">
-        <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left md:justify-left justify-left !important">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
+        <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left md:justify-left justify-left !important mx-5">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
