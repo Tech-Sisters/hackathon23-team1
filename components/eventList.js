@@ -22,14 +22,14 @@ const EventList = ({ events, imagePaths, country }) => {
       <h2 className="text-2xl font-semibold text-black mt-8 text-center md:text-left mb-4">
         Events in {country}
       </h2>
-      <div className="flex flex-wrap -mx-2 px-0 w-full h-min">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min ">
         {filterCountryEvents.map((event) => (
           <div
             key={event.id}
-            className="w-[300px] justify-center text-center mx-auto px-0 "
+            className="w-[300px] justify-left text-center mx-1 px-0 "
             onClick={() => handleEventClick(event)}
           >
-            <div className="bg-white m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
+            <div className="bg-white m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px] ">
               <Image
                 src={allImagePaths[event.imageKey]}
                 alt="event-image"
