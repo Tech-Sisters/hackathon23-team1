@@ -1,10 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import Image from "next/image";
 import MuslimWomen from "/public/Images/muslim-women.jpg";
-import allEvents from "../public/eventsData";
 
 const EventsForm = () => {
-  // const allPlaceHolderEvents = allEvents;
   const initialValues = {
     name: "",
     place: "",
@@ -13,7 +11,6 @@ const EventsForm = () => {
     description: "",
   };
 
-  const [allPlaceHolderEvents, setAllPlaceHolderEvents] = useState([allEvents]);
   const [eventFormValues, setEventFormValues] = useState(initialValues);
 
   const handleChange = (e) => {
@@ -118,6 +115,14 @@ const EventsForm = () => {
             onChange={handleChange}
             className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
+        </div>
+        <div className="flex items-center justify-center">
+          <button
+            className="bg-turquoise hover:bg-yellow text-white font-bold px-10 py-1 mx-4 mt-4 h-10 rounded-md focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Submit
+          </button>{" "}
         </div>
       </form>
 
