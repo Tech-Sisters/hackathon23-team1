@@ -181,7 +181,7 @@ const FindEventsService = () => {
 
       <div className="search-results mt-5 mb-28 justify-left ">
         {filteredSearchResults.length > 0 && (
-          <h2 className="text-2xl font-semibold ml-2 text-orange text-center md:text-left relative mb-4">
+          <h2 className="text-2xl font-semibold ml-2 text-orange text-center md:text-left relative mb-0">
             Search Results
             <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 md:visible invisible w-4/5 bg-orange border-orange" />
           </h2>
@@ -203,7 +203,7 @@ const FindEventsService = () => {
           {filteredSearchResults.map((event) => (
             <div
               key={event.id}
-              className="w-[300px] md:w-[300px] justify-center text-center mx-auto md:mx-1 px-0 mb-4 "
+              className="w-[300px] md:w-[300px] md:justify-left text-center mx-auto md:mx-1 px-0 mb-4 "
             >
               <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                 <Image
@@ -269,12 +269,12 @@ const FindEventsService = () => {
         </div>
       )}
       <div className="flex justify-center md:justify-left flex-col w-full mb-28">
-        <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 justify-center md:justify-left">
+        <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 md:justify-left justify-center ">
           {filteredEvents ? (
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="w-[300px] md:w-[300px] justify-center text-center mx-1 px-0"
+                className="w-[300px] md:w-[300px] justify-center md:justify-left text-center mx-1 px-0"
                 onClick={() => handleEventClick(event)}
               >
                 <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">

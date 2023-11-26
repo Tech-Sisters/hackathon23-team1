@@ -18,15 +18,15 @@ const EventList = ({ events, country }) => {
   // };
 
   return (
-    <div className="flex justify-center flex-col w-full mb-28">
+    <div className="flex flex-col w-full mb-28">
       <h2 className="text-2xl font-semibold text-black mt-8 text-center md:text-left mb-4">
         Events in {country}
       </h2>
-      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-left">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
         {filterCountryEvents.map((event) => (
           <div
             key={event.id}
-            className="w-[300px] justify-center text-center mx-0 md:mx-1 px-0 "
+            className="w-[300px] justify-center md:justify-left text-center mx-0 md:mx-1 px-0 "
             onClick={() => handleEventClick(event)}
           >
             <div className="bg-white m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px] ">
