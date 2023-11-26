@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import allEvents from "../public/eventsData";
+// import allEvents from "../public/eventsData";
 import SearchIcon from "public/Images/search-icon.png";
 import UserIcon from "public/Images/user-icon.png";
 import ClearIcon from "public/Images/clear-icon.png";
@@ -19,6 +19,7 @@ const FindEventsService = () => {
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
   const [isSearchSubmitted, setIsSearchSubmitted] = useState(false);
   const [showClearButton, setShowClearButton] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/events", {
@@ -152,6 +153,14 @@ const FindEventsService = () => {
     }
   };
 
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedEvent(null);
+  };
+
   return (
     <div className="container mx-auto px-[70px] py-[0px] font-montserrat">
       <div className="search-container absolute right-32 top-5 font-hind">
@@ -263,6 +272,7 @@ const FindEventsService = () => {
               <div
                 key={event.id}
                 className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
+                onClick={() => handleEventClick(event)}
               >
                 <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
                   <Image
@@ -286,23 +296,29 @@ const FindEventsService = () => {
             <NoResults />
           )}{" "}
         </div>
+        {selectedEvent && (
+          <EventDetails event={selectedEvent} onClose={handleCloseDetails} />
+        )}
         <EventList
           key="malaysia"
           events={events}
           imagePaths={imagePaths}
           country="Malaysia"
+          onEventClick={handleEventClick}
         />
         <EventList
           key="uk"
           events={events}
           imagePaths={imagePaths}
           country="United Kingdom"
+          onEventClick={handleEventClick}
         />
         <EventList
           key="qatar"
           events={events}
           imagePaths={imagePaths}
           country="Qatar"
+          onEventClick={handleEventClick}
         />
       </div>
     </div>
