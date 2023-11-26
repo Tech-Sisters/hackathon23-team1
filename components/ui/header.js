@@ -54,7 +54,7 @@ const Header = () => {
                 />
               </button>
               {toggle && (
-                <ul className="menu-group text-black flex flex-col absolute top-10 left-0 b-0 mb-0 bg-pink  w-screen text-sm items-left  font-700 px-3 z-100 text-white">
+                <ul className="menu-group  flex flex-col absolute top-8 left-0 b-0 mb-0 bg-pink  w-screen text-sm items-left  font-700 px-3 z-100 text-white pb-4">
                   <Link href="/find-events">
                     <li className="menu-group_item pt-6 hover:text-yellow">
                       Find Events

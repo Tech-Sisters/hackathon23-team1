@@ -183,11 +183,11 @@ const FindEventsService = () => {
         {filteredSearchResults.length > 0 && (
           <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
             Search Results
-            <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 w-4/5 bg-orange border-orange" />
+            <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 md:visible invisible w-4/5 bg-orange border-orange" />
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="block absolute right-4 top-[-45px] ">
+          <button className="block absolute right-0 top-[-45px] md:right-4 md:top-[-45px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
