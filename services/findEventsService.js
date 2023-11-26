@@ -8,6 +8,7 @@ import EventList from "@/components/eventList";
 import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
 import NoResults from "@/components/noResults";
+import allImagePaths from "@/public/imagePaths";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -82,24 +83,6 @@ const FindEventsService = () => {
       //   filterByCountry(events);
     }
   }, [userLocation, events, radius]);
-
-  //static image paths
-  const imagePaths = {
-    placeholder: "/images/muslim-women.jpg",
-    bookclub: "/images/book-club.png",
-    lecture: "/images/lecture.png",
-    meetup: "/images/meetup.jpg",
-    sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
-    techworkshop: "/images/techworkshop.jpg",
-    cycling: "/images/cycling.jpg",
-    foodfestival: "/images/foodfestival.jpg",
-    cycling: "/images/cycling.jpg",
-    kidsmeetup: "/images/kidsmeetup.jpg",
-    islamicbookclub: "/images/islamic-bookclub.jpg",
-    londonfoodfestival: "/images/londonfoodfestival.jpg",
-    quranstudy: "/images/quranstudy.jpg",
-    islamicartexhibition: "/images/islamic-artexhibition.jpg",
-  };
 
   //search button functionality
   const handleSearchInputChange = (e) => {
@@ -224,7 +207,7 @@ const FindEventsService = () => {
             >
               <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] w-full">
                 <Image
-                  src={imagePaths[event.imageKey]}
+                  src={allImagePaths[event.imageKey]}
                   alt="event-image"
                   width={300}
                   height={300}
@@ -276,7 +259,7 @@ const FindEventsService = () => {
               >
                 <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
                   <Image
-                    src={imagePaths[event.imageKey]}
+                    src={allImagePaths[event.imageKey]}
                     alt="event-image"
                     width={300}
                     height={300}
@@ -302,21 +285,21 @@ const FindEventsService = () => {
         <EventList
           key="malaysia"
           events={events}
-          imagePaths={imagePaths}
+          imagePaths={allImagePaths}
           country="Malaysia"
           onEventClick={handleEventClick}
         />
         <EventList
           key="uk"
           events={events}
-          imagePaths={imagePaths}
+          allImagePaths={allImagePaths}
           country="United Kingdom"
           onEventClick={handleEventClick}
         />
         <EventList
           key="qatar"
           events={events}
-          imagePaths={imagePaths}
+          allImagePaths={allImagePaths}
           country="Qatar"
           onEventClick={handleEventClick}
         />

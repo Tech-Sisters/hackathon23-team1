@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ClearIcon from "public/Images/clear-icon.png";
+import allImagePaths from "@/public/imagePaths";
 
 const EventDetails = ({ event, onClose }) => {
-  const imagePaths = {
-    placeholder: "/images/muslim-women.jpg",
-    bookclub: "/images/book-club.png",
-    lecture: "/images/lecture.png",
-    meetup: "/images/meetup.jpg",
-    sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
-    techworkshop: "/images/techworkshop.jpg",
-    cycling: "/images/cycling.jpg",
-    foodfestival: "/images/foodfestival.jpg",
-    cycling: "/images/cycling.jpg",
-    kidsmeetup: "/images/kidsmeetup.jpg",
-    islamicbookclub: "/images/islamic-bookclub.jpg",
-    londonfoodfestival: "/images/londonfoodfestival.jpg",
-    quranstudy: "/images/quranstudy.jpg",
-    islamicartexhibition: "/images/islamic-artexhibition.jpg",
-  };
   const [attending, setAttending] = useState(false);
 
   const handleLikeClick = () => {
@@ -58,7 +43,7 @@ const EventDetails = ({ event, onClose }) => {
         <div className="flex-shrink-0 w-full h-[300px] relative mb-4 md:mb-0">
           <div className="absolute inset-0 bg-cream opacity-50 rounded-lg"></div>
           <img
-            src={imagePaths[event.imageKey]}
+            src={allImagePaths[event.imageKey]}
             alt={event.name}
             className="w-full h-full object-cover rounded-lg"
           />

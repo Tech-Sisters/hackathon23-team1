@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import allImagePaths from "@/public/imagePaths";
 
 const EventList = ({ events, imagePaths, country }) => {
   const filterCountryEvents = events.filter(
@@ -30,7 +31,7 @@ const EventList = ({ events, imagePaths, country }) => {
           >
             <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
               <Image
-                src={imagePaths[event.imageKey]}
+                src={allImagePaths[event.imageKey]}
                 alt="event-image"
                 width={300}
                 height={300}
