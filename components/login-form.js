@@ -49,11 +49,11 @@ const LoginForm = () => {
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
 
-          <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
-            <Link href="/signup-form">
+          <Link href="/signup-form">
+            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
               <span className="text-white font-medium">Sign up</span>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </form>
     </div>
