@@ -15,6 +15,7 @@ module.exports = {
       lg: "1024px",
       laptop: "1240px",
       xl: "1440px",
+      xxl: "1500px",
     },
     container: {
       center: true,

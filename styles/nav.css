@@ -31,3 +31,7 @@ li {
   margin-right: 35px;
   margin-left: 35px;
 }
+
+li:hover {
+  font: "#E8E9A1";
+}
