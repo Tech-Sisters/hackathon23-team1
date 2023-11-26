@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import allImagePaths from "@/public/imagePaths";
 
-const EventList = ({ events, imagePaths, country }) => {
+const EventList = ({ events, country }) => {
   const filterCountryEvents = events.filter(
     (event) => event.country === country
   );
@@ -13,20 +13,20 @@ const EventList = ({ events, imagePaths, country }) => {
     setSelectedEvent(event);
   };
 
-  const handleCloseDetails = () => {
-    setSelectedEvent(null);
-  };
+  // const handleCloseDetails = () => {
+  //   setSelectedEvent(null);
+  // };
 
   return (
-    <div className="flex justify-left flex-col w-full mb-28">
+    <div className="flex justify-center flex-col w-full mb-28">
       <h2 className="text-2xl font-semibold text-black mt-8 text-center md:text-left mb-4">
         Events in {country}
       </h2>
-      <div className="flex flex-wrap -mx-2 px-0 w-full h-min ">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-left">
         {filterCountryEvents.map((event) => (
           <div
             key={event.id}
-            className="w-[300px] justify-left text-center mx-1 px-0 "
+            className="w-[300px] justify-center text-center mx-0 md:mx-1 px-0 "
             onClick={() => handleEventClick(event)}
           >
             <div className="bg-white m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px] ">

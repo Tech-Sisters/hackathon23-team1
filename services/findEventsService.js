@@ -187,7 +187,7 @@ const FindEventsService = () => {
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="block absolute right-12 top-[-45px] md:right-0 md:top-[-45px] ">
+          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-45px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -203,7 +203,7 @@ const FindEventsService = () => {
           {filteredSearchResults.map((event) => (
             <div
               key={event.id}
-              className="w-[300px] md:w-[300px] justify-center text-center mx-1 px-0 mb-4"
+              className="w-[300px] md:w-[300px] justify-center text-center mx-auto md:mx-1 px-0 mb-4 "
             >
               <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                 <Image
@@ -269,7 +269,7 @@ const FindEventsService = () => {
         </div>
       )}
       <div className="flex justify-center md:justify-left flex-col w-full mb-28">
-        <div className="flex flex-wrap -mx-2 px-1 w-full mb-28">
+        <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 justify-center md:justify-left">
           {filteredEvents ? (
             filteredEvents.map((event) => (
               <div
