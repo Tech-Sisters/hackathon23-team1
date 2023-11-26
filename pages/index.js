@@ -1,7 +1,7 @@
 // import FindEvents from "./findEvents";
 import Image from "next/image";
-import TogetherAppLogo from "public/Images/logo.jpeg";
 import Link from "next/link";
+import TogetherAppLogo from "public/Images/logo.png";
 import LoginForm from "@/components/login-form";
 
 export default function Home() {

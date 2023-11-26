@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const EventList = ({ events, imagePaths, country }) => {
   const filterCountryEvents = events.filter(
     (event) => event.country === country
   );
+
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedEvent(null);
+  };
 
   return (
     <div className="flex justify-left flex-col w-full mb-28">
@@ -16,6 +26,7 @@ const EventList = ({ events, imagePaths, country }) => {
           <div
             key={event.id}
             className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-2 text-center"
+            onClick={() => handleEventClick(event)}
           >
             <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px]">
               <Image

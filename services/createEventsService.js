@@ -44,7 +44,7 @@ const EventsForm = () => {
         className="events-form mx-auto p-7 py-20 border-r-white w-1/2 rounded-md shadow-md justify-left relative z-10"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-2xl mb-10 mt-[-60px] font-700 font-montserrat text-black ">
+        <h1 className="text-center text-2xl mb-10 mt-[-60px] font-700 font-montserrat text-black">
           Create An Event
         </h1>
         <div className="mb-4">
@@ -53,10 +53,11 @@ const EventsForm = () => {
           </label>
           <input
             type="text"
+            placeholder="Meetup"
             id="name"
             name="name"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-black leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -66,10 +67,11 @@ const EventsForm = () => {
           </label>
           <input
             type="text"
+            placeholder="Central Park"
             id="place"
             name="place"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -79,10 +81,11 @@ const EventsForm = () => {
           </label>
           <input
             type="text"
+            placeholder="United Kingdom"
             id="country"
             name="country"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -92,33 +95,29 @@ const EventsForm = () => {
           </label>
           <input
             type="text"
+            placeholder="Sun 1, 11:00 am"
             id="time"
             name="time"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
         <div className="mb-6">
-          <label htmlFor="description" className="block text-black font-bold mb-2">
+          <label
+            htmlFor="description"
+            className="block text-black font-bold mb-2"
+          >
             Event Description
           </label>
           <input
             type="text"
+            placeholder="A meetup organised by Tech Sisters"
             id="description"
             name="description"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%]  rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
-        </div>
-
-        <div className="flex items-center justify-center">
-          <button
-            className="bg-orange hover:bg-yellow text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Submit
-          </button>{" "}
         </div>
       </form>
 

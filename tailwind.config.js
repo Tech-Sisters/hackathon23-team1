@@ -27,9 +27,9 @@ module.exports = {
         yellow: "#E8E9A1",
         orange: "#E6B566",
         pink: "#E5707E",
-        lightpink:"#E67080",
+        lightpink: "#E67080",
         lightyellow: "#E5B766",
-        light:"#E9E9A1",
+        light: "#E9E9A1",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -83,7 +83,6 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
