@@ -153,7 +153,7 @@ const FindEventsService = () => {
     <div className="container my-0 py-0 mx-auto px-5 md:px-[70px] font-montserrat">
       <div className="search-container absolute top-5 right-[62px] md:right-32 md:top-5 font-hind">
         <form
-          className="search flex bg-gray-100 rounded-2xl text-left w-[150px] md:w-[400px] pl-2 h-8"
+          className="search flex bg-gray-100 rounded-2xl text-left h-[30px] w-[100px] md:w-[400px] pl-2"
           onSubmit={handleSearchSubmit}
         >
           <Image

@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="flex flex-col mx-auto h-20 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink">
-      <div className="logo pt-2 w-[200px]">
+      <div className="logo pt-2 w-[150px] md:w-[200px]">
         <Link href="/">
           <Image
             src={TogetherAppLogo}
