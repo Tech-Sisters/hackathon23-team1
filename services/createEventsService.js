@@ -21,7 +21,7 @@ const EventsForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(eventFormValues);
-    fetch("http://localhost:3000/api/events", {
+    await fetch("http://localhost:3000/api/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const EventsForm = () => {
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
 
-    window.location.reload(false); // redirect to another page e.g. events page
+    // window.location.reload(false); // redirect to another page e.g. events page
   };
 
   return (
