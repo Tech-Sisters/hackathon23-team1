@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
 
-
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
     email: "",
@@ -18,8 +17,7 @@ const LoginForm = () => {
   };
   return (
     <div className="flex flex-col justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
-
-    <div className="flex flex-col py-6 px-4 justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
+      {/* <div className="flex flex-col py-6 px-4 justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white "> */}
       <form className="w-full mt-12">
         <div className="w-full flex flex-col gap-y-2">
           <div className="flex flex-col gap-y-12 mb-6 ">
