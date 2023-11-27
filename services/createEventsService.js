@@ -12,6 +12,7 @@ const EventsForm = () => {
   };
 
   const [eventFormValues, setEventFormValues] = useState(initialValues);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +21,7 @@ const EventsForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
     console.log(eventFormValues);
     await fetch("http://localhost:3000/api/events", {
       method: "POST",
@@ -124,6 +126,11 @@ const EventsForm = () => {
             Submit
           </button>{" "}
         </div>
+        {isSubmitted ? (
+          <div className="w-full text-center font-bold text-turquoise font-hind text-lg mt-4">
+            Submitted!
+          </div>
+        ) : null}
       </form>
 
       <div className="flex flex-col md:h-[90%] lg:w-1/2 rounded-md shadow-md align-top justify-center bg-orange xl:w-[550px] invisible lg:visible">
