@@ -31,7 +31,7 @@ const Signup = () => {
             <div className="flex flex-col gap-y-12">
               <div className="flex gap-x-8">
                 <Input
-                  placeholder="FullName"
+                  placeholder="Full Name"
                   name="fullName"
                   onChange={handleInputField}
                   value={signPayload.fullName}
@@ -50,7 +50,7 @@ const Signup = () => {
               <div className="flex gap-x-8 mb-6">
                 <Input
                   type="password"
-                  placeholder="PassWord"
+                  placeholder="Password"
                   name="password"
                   onChange={handleInputField}
                   value={signPayload.password}
@@ -59,7 +59,7 @@ const Signup = () => {
               <div className="flex gap-x-8 mb-6">
                 <Input
                   type="location"
-                  placeholder="Location"
+                  placeholder="Country of Residence"
                   name="addresss"
                   onChange={handleInputField}
                   value={signPayload.location}
