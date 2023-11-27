@@ -3,16 +3,14 @@ import FindEventsService from "../services/findEventsService";
 
 export default function FindEvents() {
   return (
-    <main className="flex h-screen flex-col items-center bg-yellow">
+    <main className="flex h-20 flex-col items-center bg-yellow">
       <div className="layout">
         {" "}
         <Layout />
       </div>
 
-      <section className="find-events bg-white justify-center flex flex-wrap mt-[105px] p-[5px] h-full w-full ">
-        <div>
-          <FindEventsService />
-        </div>
+      <section className="find-events bg-white justify-center flex flex-wrap mt-[50px] p-[0px] h-full w-full ">
+        <FindEventsService />
       </section>
     </main>
   );
