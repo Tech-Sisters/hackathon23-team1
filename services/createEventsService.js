@@ -42,7 +42,7 @@ const EventsForm = () => {
   return (
     <div className="create-events_container flex flex-wrap my-8 md:mx-40 w-screen">
       <form
-        className="events-form mx-10 md:mx-auto p-7 py-20 border-r-white w-screen ] h-[600px] md:w-[500px] md:h-[90%] lg:w-1/2 lg:h-[640px] rounded-md shadow-md justify-left relative z-10"
+        className="events-form mx-10 md:mx-auto p-7 py-20 border-r-white w-screen ] h-[600px] md:w-[500px] md:h-[90%] lg:w-1/2 lg:h-[640px] rounded-md shadow-md justify-left relative "
         onSubmit={handleSubmit}
       >
         <h1 className="text-center text-2xl mb-10 mt-[-60px] font-700 font-montserrat text-black">
