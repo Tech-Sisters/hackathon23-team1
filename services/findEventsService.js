@@ -190,8 +190,8 @@ const FindEventsService = () => {
             Search Results
           </h2>
         )}
-        <div className="flex flex-wrap -mx-2 relative md:mt-[50px] md:mb-[60px]">
-          <button className="block absolute right-12  top-[-30px] md:right-5 md:top-[-80px] ">
+        <div className="flex flex-wrap -mx-2 relative md:mt-[20px] md:mb-[70px]">
+          <button className="block absolute right-12  top-[-30px] md:right-5 md:top-[-50px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -202,13 +202,15 @@ const FindEventsService = () => {
             />
           </button>
           {isSearchSubmitted && filteredSearchResults.length === 0 && (
-            <div className="w-full text-center font-bold text-pink font-hind text-lg mb-20">
-              <NoResults />
-              How about you create an event for your community? Visit{" "}
-              <Link href="/create-events" className="text-turquoise">
-                this page{" "}
-              </Link>
-              to get started!
+            <div className="w-full text-center font-bold text-pink font-hind text-lg mb-16">
+              <div className="bg-gray-100 p-2 pb-10 m-12 rounded-md">
+                <NoResults /> How about you create an event for your community?
+                Visit{" "}
+                <Link href="/create-events" className="text-turquoise">
+                  this page{" "}
+                </Link>
+                to get started!
+              </div>
             </div>
           )}
           {filteredSearchResults.map((event) => (
@@ -236,9 +238,9 @@ const FindEventsService = () => {
           ))}
         </div>
       </div>
-      <div className="mt-[-390px] md:mt-[-320px]">
+      <div className="mt-[-450px] md:mt-[-320px]">
         <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
-          <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left md:justify-left justify-left !important mx-5">
+          <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-center md:justify-left justify-left !important mx-5">
             Upcoming Events Within{" "}
             <select
               id="radiusSelect"
@@ -280,7 +282,7 @@ const FindEventsService = () => {
           </div>
         )}
         <div className="flex justify-center md:justify-left flex-col w-full mb-28">
-          <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 md:justify-left justify-center ">
+          <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 md:justify-start justify-center ">
             {locationError ? (
               <div className="p-4 m-5 rounded-md font-bold text-xl text-gray-400 font-hind opacity-50">
                 {locationError}{" "}
@@ -294,7 +296,7 @@ const FindEventsService = () => {
                       className="w-[300px] md:w-[300px] justify-center md:justify-left text-center mx-1 px-0"
                       onClick={() => handleEventClick(event)}
                     >
-                      <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
+                      <div className="bg-white md:justify-start m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                         <Image
                           src={allImagePaths[event.imageKey]}
                           alt="event-image"
