@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 // import allEvents from "../public/eventsData";
 import SearchIcon from "public/Images/search-icon.png";
 import UserIcon from "public/Images/user-icon.png";
@@ -21,6 +22,7 @@ const FindEventsService = () => {
   const [isSearchSubmitted, setIsSearchSubmitted] = useState(false);
   const [showClearButton, setShowClearButton] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [locationError, setLocationError] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/events", {
@@ -42,6 +44,9 @@ const FindEventsService = () => {
       },
       (error) => {
         console.error("Error getting user location:", error);
+        setLocationError(
+          "Error getting user location. Please allow location access to find events nearby."
+        );
         setLoading(false);
       }
     );
@@ -198,7 +203,14 @@ const FindEventsService = () => {
             />
           </button>
           {isSearchSubmitted && filteredSearchResults.length === 0 && (
-            <NoResults />
+            <div className="w-full text-center font-bold text-pink font-hind text-lg">
+              <NoResults />
+              How about you create an event for your community? Visit{" "}
+              <Link href="/create-events" className="text-turquoise">
+                this page{" "}
+              </Link>
+              to get started!
+            </div>
           )}
           {filteredSearchResults.map((event) => (
             <div
@@ -270,38 +282,47 @@ const FindEventsService = () => {
       )}
       <div className="flex justify-center md:justify-left flex-col w-full mb-28">
         <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 md:justify-left justify-center ">
-          {filteredEvents ? (
-            filteredEvents.map((event) => (
-              <div
-                key={event.id}
-                className="w-[300px] md:w-[300px] justify-center md:justify-left text-center mx-1 px-0"
-                onClick={() => handleEventClick(event)}
-              >
-                <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
-                  <Image
-                    src={allImagePaths[event.imageKey]}
-                    alt="event-image"
-                    width={300}
-                    height={300}
-                    className="w-[100%] h-[200px] md:w-[400px] md:h-[180px] rounded-t-sm"
-                  />
-                  <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                    {event.name}
-                  </h3>
-                  <div className="details pt-2 px-4 font-hind font-semibold text-left ">
-                    <p className="text-gray-800">{event.time}</p>
-                    <p className="text-gray-700">{event.place}</p>
-                  </div>
-                </div>
-              </div>
-            ))
+          {locationError ? (
+            <div className="p-4 m-5 rounded-md font-bold text-xl text-gray-400 font-hind opacity-50">
+              {locationError}{" "}
+            </div>
           ) : (
-            <NoResults />
-          )}{" "}
+            <>
+              {filteredEvents ? (
+                filteredEvents.map((event) => (
+                  <div
+                    key={event.id}
+                    className="w-[300px] md:w-[300px] justify-center md:justify-left text-center mx-1 px-0"
+                    onClick={() => handleEventClick(event)}
+                  >
+                    <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
+                      <Image
+                        src={allImagePaths[event.imageKey]}
+                        alt="event-image"
+                        width={300}
+                        height={300}
+                        className="w-[100%] h-[200px] md:w-[400px] md:h-[180px] rounded-t-sm"
+                      />
+                      <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                        {event.name}
+                      </h3>
+                      <div className="details pt-2 px-4 font-hind font-semibold text-left ">
+                        <p className="text-gray-800">{event.time}</p>
+                        <p className="text-gray-700">{event.place}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <NoResults />
+              )}
+            </>
+          )}
         </div>
         {selectedEvent && (
           <EventDetails event={selectedEvent} onClose={handleCloseDetails} />
         )}
+
         <EventList
           key="malaysia"
           events={events}
