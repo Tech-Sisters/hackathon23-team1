@@ -17,9 +17,6 @@ nav {
   height: 100%;
   color: white;
 }
-.nav-list:hover {
-  font: "#E8E9A1";
-}
 
 ul {
   display: flex;
@@ -36,5 +33,5 @@ li {
 }
 
 li:hover {
-  font: "#E8E9A1";
+  color: #e8e9a1;
 }
