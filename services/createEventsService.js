@@ -86,7 +86,7 @@ const EventsForm = () => {
             id="country"
             name="country"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -100,7 +100,7 @@ const EventsForm = () => {
             id="time"
             name="time"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -117,7 +117,7 @@ const EventsForm = () => {
             id="description"
             name="description"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
         <div className="flex items-center justify-center">
