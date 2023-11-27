@@ -1,7 +1,6 @@
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import Input from "../components/input";
-import Header from "@/components/ui/header";
 import Layout from "@/components/ui/layout";
 
 const Signup = () => {
@@ -9,7 +8,7 @@ const Signup = () => {
     fullName: "",
     email: "",
     password: "",
-    // location: "",
+    
   });
   const handleInputField = (e) => {
     const { name, value } = e.target;
@@ -57,15 +56,7 @@ const Signup = () => {
                   value={signPayload.password}
                 />
               </div>
-              {/* <div className="flex gap-x-8 mb-6">
-                <Input
-                  type="location"
-                  placeholder="Location"
-                  name="addresss"
-                  onChange={handleInputField}
-                  value={signPayload.location}
-                />
-              </div> */}
+              
             </div>
             <div className="flex items-center justify-center">
               <button
