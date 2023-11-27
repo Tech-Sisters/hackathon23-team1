@@ -184,7 +184,7 @@ const FindEventsService = () => {
         />
       </div>
 
-      <div className="search-results  mb-[300px] justify-left ">
+      <div className="search-results mb-[350px] mt-[50px] justify-left ">
         {filteredSearchResults.length > 0 && (
           <h2 className="text-2xl font-semibold ml-2 text-orange text-center md:text-left relative mb-0">
             Search Results
@@ -192,7 +192,7 @@ const FindEventsService = () => {
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative mt-[50px] mb-[60px]">
-          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-30px] ">
+          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-80px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -237,7 +237,7 @@ const FindEventsService = () => {
           ))}
         </div>
       </div>
-      <div className="mt-[-290px]">
+      <div className="mt-[-320px]">
         <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
           <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left md:justify-left justify-left !important mx-5">
             Upcoming Events Within{" "}
