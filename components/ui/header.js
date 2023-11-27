@@ -11,7 +11,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex flex-col mx-auto h-0 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink">
+    <header className="flex flex-col mx-auto h-20 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink">
       <div className="logo pt-2 w-[200px]">
         <Link href="/">
           <Image
@@ -40,7 +40,7 @@ const Header = () => {
         </button>
         {toggle && (
           <div className="menu-container ">
-            <ul className="menu-group absolute flex flex-col items-left top-10 w-full ">
+            <ul className="menu-group z-10 absolute flex flex-col items-left top-10 w-full ">
               <button
                 className="close-btn absolute top-[48px] right-[7px] z-10"
                 onClick={() => setToggle(!toggle)}

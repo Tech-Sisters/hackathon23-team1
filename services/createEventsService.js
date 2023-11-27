@@ -22,6 +22,7 @@ const EventsForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
+
     console.log(eventFormValues);
     await fetch("http://localhost:3000/api/events", {
       method: "POST",
@@ -33,6 +34,7 @@ const EventsForm = () => {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
+    setIsSubmitted(false);
 
     // window.location.reload(false); // redirect to another page e.g. events page
   };
