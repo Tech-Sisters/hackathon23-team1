@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
 
+
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
     email: "",
@@ -38,7 +39,7 @@ const LoginForm = () => {
             />
           </div>
 
-          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize">
+          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize hover:bg-lightyellow">
             Login
           </button>
 
@@ -48,7 +49,6 @@ const LoginForm = () => {
             </span>
             <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
           </div>
-
           <Link href="/signup-form">
             <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
               <span className="text-white font-medium">Sign up</span>
