@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./input";
 
+
 const LoginForm = () => {
   const [loginPayload, setLoginPayload] = useState({
     email: "",
@@ -16,7 +17,11 @@ const LoginForm = () => {
     }));
   };
   return (
-    <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
+<<<<<<< HEAD
+    <div className="flex flex-col justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
+=======
+    <div className="flex flex-col py-6 px-4 justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
+>>>>>>> 4da98743c959150f3476918c3937d72733c1420b
       <form className="w-full mt-12">
         <div className="w-full flex flex-col gap-y-2">
           <div className="flex flex-col gap-y-12 mb-6 ">
@@ -38,17 +43,19 @@ const LoginForm = () => {
             />
           </div>
 
-          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize">
+          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize hover:bg-lightyellow">
             Login
           </button>
 
-          <div className="flex justify-center items-center relative my-1">
-            <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
+          <div className="flex gap-3 justify-between items-center relative my-1">
+            <span className="h-[2px] bg-gray-400 w-full"></span>
+            <p className="text-lg text-gray-800">or</p>
+            <span className="h-[2px] bg-gray-400 w-full"></span>
+            {/* <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
               or
             </span>
-            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
+            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span> */}
           </div>
-
           <Link href="/signup-form">
             <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
               <span className="text-white font-medium">Sign up</span>
