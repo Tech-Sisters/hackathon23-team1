@@ -6,7 +6,7 @@ import LoginForm from "@/components/login-form";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-row items-center justify-between  ">
-      <main className="flex min-h-screen items-center p-24 bg-yellow">
+      <main className="flex min-h-screen items-center p-24 bg-yellow w-2/3">
         <div className="logo">
           <Image
             src={TogetherAppLogo}
@@ -17,9 +17,9 @@ export default function Home() {
           />
         </div>
 
-        <button>
+        {/* <button>
           <Link href="/find-events">click to view events</Link>
-        </button>
+        </button> */}
       </main>
       <LoginForm className="bg-white w-1/4 min-h-screen" />
     </div>
