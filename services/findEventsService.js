@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import allEvents from "../public/eventsData";
+// import allEvents from "../public/eventsData";
 import SearchIcon from "public/Images/search-icon.png";
 import UserIcon from "public/Images/user-icon.png";
 import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
 import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
+import NoResults from "@/components/noResults";
+import allImagePaths from "@/public/imagePaths";
 
 const FindEventsService = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -16,9 +18,12 @@ const FindEventsService = () => {
   const [radius, setRadius] = useState("5");
   const [searchInput, setSearchInput] = useState("");
   const [filteredSearchResults, setFilteredSearchResults] = useState([]);
+  const [isSearchSubmitted, setIsSearchSubmitted] = useState(false);
+  const [showClearButton, setShowClearButton] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/getEvents", {
+    fetch("http://localhost:3000/api/events", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -79,6 +84,7 @@ const FindEventsService = () => {
     }
   }, [userLocation, events, radius]);
 
+
   //static image paths
   const imagePaths = {
     bookclub: "/images/book-club.png",
@@ -96,6 +102,7 @@ const FindEventsService = () => {
     islamicartexhibition: "/Images/islamic-artexhibition.jpg",
   };
 
+
   //search button functionality
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
@@ -103,37 +110,69 @@ const FindEventsService = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const clearButton = document.querySelector(".clear-button");
-    clearButton.classList.remove("invisible");
+    setIsSearchSubmitted(true);
 
-    //attains an array of all the property values of event object and checks if atleast one of the values includes the search input
-    const searchResults = events.filter((event) =>
-      Object.values(event).some(
-        (value) =>
-          typeof value === "string" &&
-          value.toLowerCase().includes(searchInput.toLowerCase())
-      )
-    );
+    const searchResults = events.filter((event) => {
+      if (Object.values(event)) {
+        return Object.values(event).some(
+          (value) =>
+            typeof value === "string" &&
+            value.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      } else {
+        return false;
+      }
+    });
+
     setFilteredSearchResults(searchResults);
+    handleClearButtonUI(searchResults);
+
+    if (searchResults.length === 0) {
+      setShowClearButton(true); //
+    } else {
+      setShowClearButton(false);
+    }
   };
 
   const handleClear = () => {
     setFilteredSearchResults([]);
+    setIsSearchSubmitted(false);
     const clearButton = document.querySelector(".clear-button");
-    console.log(clearButton);
     clearButton.classList.add("invisible");
   };
 
+  const handleClearButtonUI = (searchResults) => {
+    const clearButton = document.querySelector(".clear-button");
+
+    if (
+      (searchResults && searchResults.length > 0) ||
+      showClearButton ||
+      searchResults.length === 0
+    ) {
+      clearButton.classList.remove("invisible");
+    } else {
+      clearButton.classList.add("invisible");
+    }
+  };
+
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedEvent(null);
+  };
+
   return (
-    <div className="container mx-auto px-[70px] py-[0px] font-montserrat">
-      <div className="search-container absolute right-32 top-5 font-hind">
+    <div className="container mx-auto px-5 md:px-[70px] font-montserrat">
+      <div className="search-container absolute top-5 right-[62px] md:right-32 md:top-5 font-hind">
         <form
-          className="search flex bg-gray-100 rounded-2xl text-left w-[400px] pl-2 h-8"
+          className="search flex bg-gray-100 rounded-2xl text-left w-[150px] md:w-[400px] pl-2 h-8"
           onSubmit={handleSearchSubmit}
         >
           <Image
             src={SearchIcon}
-            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1"
+            className="search-icon  inline-flex opacity-80 w-4 h-5 m-2 pb-1 "
             alt="search-icon"
             width={15}
             height={15}
@@ -141,10 +180,10 @@ const FindEventsService = () => {
 
           <input
             type="text"
-            placeholder="Search events"
+            placeholder="Search"
             className="bg-transparent inline-flex focus:outline-none pt-1 w-full"
             value={searchInput}
-            id="clear-button"
+            id="search-button"
             onChange={handleSearchInputChange}
           ></input>
         </form>
@@ -152,8 +191,8 @@ const FindEventsService = () => {
       <div className="search-container absolute right-20 top-5 font-hind">
         <Image
           src={UserIcon}
-          className="user-icon  inline-flex w-[30px]"
-          alt="user-icon"
+          className="user-icon  inline-flex w-[30px] md:visible invisible"
+          alt="user-icon "
           width={25}
           height={25}
         />
@@ -161,13 +200,13 @@ const FindEventsService = () => {
 
       <div className="search-results mt-5 mb-28 justify-left ">
         {filteredSearchResults.length > 0 && (
-          <h2 className="text-2xl font-semibold ml-2 text-orange text-left relative mb-4">
+          <h2 className="text-2xl font-semibold ml-2 text-orange text-center md:text-left relative mb-0">
             Search Results
-            <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 w-4/5 bg-orange border-orange" />
+            <h2 className="inline-flex absolute left-[200px] top-[15px] h-1 rounded-sm opacity-10 md:visible invisible w-4/5 bg-orange border-orange" />
           </h2>
         )}
         <div className="flex flex-wrap -mx-2 relative">
-          <button className="inline-flex absolute right-4 top-[-45px] ">
+          <button className="block absolute right-12 top-[-45px] md:right-5 md:top-[-30px] ">
             <Image
               src={ClearIcon}
               alt="clear-icon"
@@ -177,17 +216,25 @@ const FindEventsService = () => {
               onClick={handleClear}
             />
           </button>
+          {isSearchSubmitted && filteredSearchResults.length === 0 && (
+            <NoResults />
+          )}
           {filteredSearchResults.map((event) => (
-            <div key={event.id} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-2 ">
-              <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] w-full">
+            <div
+              key={event.id}
+              className="w-[300px] md:w-[300px] md:justify-left text-center mx-auto md:mx-1 px-0 mb-4 "
+            >
+              <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
                 <Image
-                  src={imagePaths[event.imageKey]}
+                  src={allImagePaths[event.imageKey]}
                   alt="event-image"
                   width={300}
                   height={300}
                   className="w-[310px] h-[180px] rounded-t-sm"
                 />
-                <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">{event.name}</h3>
+                <h3 className="text-lg font-bold mt-3 text-pink text-left px-4">
+                  {event.name}
+                </h3>
                 <div className="details pt-2 px-4 font-hind font-semibold text-left">
                   <p className="text-gray-800">{event.time}</p>
                   <p className="text-gray-700">{event.place}</p>
@@ -198,19 +245,39 @@ const FindEventsService = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-left ">
-        <h2 className="text-2xl font-semibold mb-10 text-black py-0 h-3 text-left justify-left">
+      <div className="flex flex-wrap -mx-2 px-0 w-full h-min justify-center md:justify-start !important">
+        <h2 className="text-xl md:text-2xl font-semibold mb-10 text-black py-0 h-3 text-left md:justify-left justify-left !important mx-5">
           Upcoming Events Within{" "}
           <select
             id="radiusSelect"
             onChange={handleSelectChange}
             value={radius}
-            className="px-2 text-base bg-gray-100 border-black cursor-pointer w-12"
+            className="px-2 rounded text-base bg-gray-100 border-none cursor-pointer w-12"
           >
-            <option value="5">5 </option>
-            <option value="10">10 </option>
-            <option value="15">15 </option>
-            <option value="20">20 </option>
+            <option
+              value="5"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              5{" "}
+            </option>
+            <option
+              value="10"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              10{" "}
+            </option>
+            <option
+              value="15"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              15{" "}
+            </option>
+            <option
+              value="20"
+              className="px-2 rounded bg-white hover:bg-gray-100"
+            >
+              20{" "}
+            </option>
           </select>{" "}
           Miles:
         </h2>
@@ -220,35 +287,61 @@ const FindEventsService = () => {
           <LoadingSpinner />
         </div>
       )}
-      <div className="flex justify-left flex-col w-full mb-28">
-        <div className="flex flex-wrap -mx-2 px-0  w-full mb-28">
-          {filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4  text-center"
-            >
-              <div className="bg-white p-0 m-2 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[300px] ">
-                <Image
-                  src={imagePaths[event.imageKey]}
-                  alt="event-image"
-                  width={300}
-                  height={300}
-                  className="w-[300px] h-[180px] rounded-t-sm"
-                />
-                <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
-                  {event.name}
-                </h3>
-                <div className="details pt-2 px-4 font-hind font-semibold text-left ">
-                  <p className="text-gray-800">{event.time}</p>
-                  <p className="text-gray-700">{event.place}</p>
+      <div className="flex justify-center md:justify-left flex-col w-full mb-28">
+        <div className="flex flex-wrap -mx-2 px-1 w-full mb-28 md:justify-left justify-center ">
+          {filteredEvents ? (
+            filteredEvents.map((event) => (
+              <div
+                key={event.id}
+                className="w-[300px] md:w-[300px] justify-center md:justify-left text-center mx-1 px-0"
+                onClick={() => handleEventClick(event)}
+              >
+                <div className="bg-white  m-2 my-4 border rounded-md cursor-pointer hover:shadow-lg border-slate-300 h-[330px] md:h-[300px] w-[300px]">
+                  <Image
+                    src={allImagePaths[event.imageKey]}
+                    alt="event-image"
+                    width={300}
+                    height={300}
+                    className="w-[100%] h-[200px] md:w-[400px] md:h-[180px] rounded-t-sm"
+                  />
+                  <h3 className="text-lg font-bold  mt-3 text-pink text-left px-4">
+                    {event.name}
+                  </h3>
+                  <div className="details pt-2 px-4 font-hind font-semibold text-left ">
+                    <p className="text-gray-800">{event.time}</p>
+                    <p className="text-gray-700">{event.place}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}{" "}
+            ))
+          ) : (
+            <NoResults />
+          )}{" "}
         </div>
-        <EventList events={events} imagePaths={imagePaths} country="Malaysia" />
-        <EventList events={events} imagePaths={imagePaths} country="United Kingdom" />
-        <EventList events={events} imagePaths={imagePaths} country="Qatar" />
+        {selectedEvent && (
+          <EventDetails event={selectedEvent} onClose={handleCloseDetails} />
+        )}
+        <EventList
+          key="malaysia"
+          events={events}
+          imagePaths={allImagePaths}
+          country="Malaysia"
+          onEventClick={handleEventClick}
+        />
+        <EventList
+          key="uk"
+          events={events}
+          allImagePaths={allImagePaths}
+          country="United Kingdom"
+          onEventClick={handleEventClick}
+        />
+        <EventList
+          key="qatar"
+          events={events}
+          allImagePaths={allImagePaths}
+          country="Qatar"
+          onEventClick={handleEventClick}
+        />
       </div>
     </div>
   );

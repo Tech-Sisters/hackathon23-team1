@@ -33,8 +33,5 @@ li {
 }
 
 li:hover {
-  color: #e8e9a1;
-  opacity: 80%;
-  cursor: pointer;
-  transition: ease 0.3s;
+  font: "#E8E9A1";
 }

@@ -9,7 +9,7 @@ const CreateEvents = () => {
         {" "}
         <Layout />
       </div>
-      <section className="createvents bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
+      <section className="create-events bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
         <CreateEventsService />
       </section>
     </main>
