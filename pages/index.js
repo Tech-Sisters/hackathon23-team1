@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import TogetherAppLogo from "public/Images/logo.png";
+import TogetherAppLogo from "public/images/logo.png";
 import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-row items-center justify-between  ">
-      <main className="flex min-h-screen items-center p-24 bg-yellow w-3/4">
+    <div className="md:flex min-h-screen flex-row items-center justify-between  ">
+      <main className="flex md:min-h-screen w-full items-center p-24 bg-yellow md:w-3/4 ">
         <div className="logo">
           <Image
             src={TogetherAppLogo}
@@ -17,9 +17,9 @@ export default function Home() {
           />
         </div>
 
-        <button>
+        {/* <button>
           <Link href="/find-events">click to view events</Link>
-        </button>
+        </button> */}
       </main>
       <LoginForm className="bg-white w-1/4 min-h-screen" />
     </div>

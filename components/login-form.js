@@ -16,7 +16,7 @@ const LoginForm = () => {
     }));
   };
   return (
-    <div className="flex flex-col justify-center items-center h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
+    <div className="flex flex-col py-6 px-4 justify-center items-center md:h-screen overflow-auto max-w-[85%] mx-auto scrollbar-hide bg-white ">
       <form className="w-full mt-12">
         <div className="w-full flex flex-col gap-y-2">
           <div className="flex flex-col gap-y-12 mb-6 ">
@@ -42,11 +42,14 @@ const LoginForm = () => {
             Login
           </button>
 
-          <div className="flex justify-center items-center relative my-1">
-            <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
+          <div className="flex gap-3 justify-between items-center relative my-1">
+            <span className="h-[2px] bg-gray-400 w-full"></span>
+            <p className="text-lg text-gray-800">or</p>
+            <span className="h-[2px] bg-gray-400 w-full"></span>
+            {/* <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
               or
             </span>
-            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span>
+            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span> */}
           </div>
 
           <Link href="/signup-form">
