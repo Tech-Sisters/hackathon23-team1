@@ -69,7 +69,7 @@ const EventDetails = ({ event, onClose }) => {
                 height={15}
               />
             </div>{" "}
-            Details
+            Description
           </h3>
           <p className="description text-gray-700 font-hind font-semibold ml-3">
             {event.description}
