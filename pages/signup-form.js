@@ -71,7 +71,7 @@ const Signup = () => {
                 className="bg-turquoise hover:bg-yellow text-white font-bold px-10 py-1 rounded-md mx-4 mt-4 h-10 focus:outline-none focus:shadow-outline"
                 type="button"
               >
-                Submit
+                Create Account
               </button>
             </div>
           </div>
