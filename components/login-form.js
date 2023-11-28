@@ -39,7 +39,7 @@ const LoginForm = () => {
             />
           </div>
 
-          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize hover:bg-lightyellow">
+          <button className="w-full h-10 border border-lightpink bg-lightpink rounded-[4rem] font-medium flex items-center justify-center gap-x-[0.3125rem] capaitalize hover:bg-lightyellow" type="button">
             Login
           </button>
 

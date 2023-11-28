@@ -1,6 +1,8 @@
 import Image from "next/image";
+import TogetherAppLogo from "public/images/logo.png";
 import LoginForm from "@/components/login-form";
 import TogetherLogo from "/public/Images/logo.png";
+
 
 export default function Home() {
   return (
