@@ -15,7 +15,7 @@ Before you begin, make sure you have the following installed:
 - [Node.js](https://nodejs.org/) (version 10 or newer)
 - [npm](https://www.npmjs.com/) (comes bundled with Node.js)
 
-<!-- - [MongoDB](https://www.mongodb.com/try/download/community) (Make sure the MongoDB server is running) -->
+- [MongoDB](https://www.mongodb.com/try/download/community) (Make sure the MongoDB server is running)
 
 ### Clone the Repository
 
@@ -28,12 +28,12 @@ cd hackathon23-team1
 
 npm install
 
-<!-- ### Set Up MongoDB
+### Set Up MongoDB
 
 Make sure your MongoDB server is running
 Create a .env file in the root of the project.
 Add the following line to the .env file, replacing <YOUR_MONGODB_URI> with your MongoDB connection string:
-MONGODB_URI=<YOUR_MONGODB_URI> -->
+MONGODB_URI=<YOUR_MONGODB_URI>
 
 ### Run the App
 
