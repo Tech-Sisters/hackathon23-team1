@@ -13,7 +13,8 @@ Follow these steps to set up and run the app on your local machine.
 Before you begin, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (version 10 or newer)
-- [npm](https://www.npmjs.com/) (v6 or later)
+- [npm](https://www.npmjs.com/) (comes bundled with Node.js)
+
 <!-- - [MongoDB](https://www.mongodb.com/try/download/community) (Make sure the MongoDB server is running) -->
 
 ### Clone the Repository
@@ -42,9 +43,9 @@ Open your browser and visit http://localhost:3000 to view the Together app.
 
 ## Authors and acknowledgment
 
-Fabiha Hassan: Backend Dev
-Lawal Khodijat: Frontend Dev
-Zaain Ahmed Naseem: Frontend Dev
+Fabiha Hassan: Backend Dev |
+|Lawal Khodijat: Frontend Dev |
+Zaain Ahmed Naseem: Frontend Dev |
 Rabia Ahmed: Product Manager
 
 Notes
