@@ -47,10 +47,6 @@ const LoginForm = () => {
             <span className="h-[2px] bg-gray-400 w-full"></span>
             <p className="text-lg text-gray-800">or</p>
             <span className="h-[2px] bg-gray-400 w-full"></span>
-            {/* <span className=" h-8 grid place-content-center bg-inherit text-xl px-4 pb-1 z-10 text-[#666666]">
-              or
-            </span>
-            <span className="absolute h-[0.1rem] w-full bg-[#6666663f] "></span> */}
           </div>
           <Link href="/signup-form">
             <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">

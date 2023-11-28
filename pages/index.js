@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import TogetherAppLogo from "public/images/logo.png";
 import LoginForm from "@/components/login-form";
 
@@ -17,9 +16,6 @@ export default function Home() {
           />
         </div>
 
-        {/* <button>
-          <Link href="/find-events">click to view events</Link>
-        </button> */}
       </main>
       <LoginForm className="bg-white w-1/4 min-h-screen" />
     </div>
