@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "./nav.js";
-import TogetherAppLogo from "public/images/logo.png";
-import HamburgerIcon from "public/images/menu-icon.png";
-import CloseIcon from "public/Images/clear-icon.png";
+import TogetherLogo from "/public/images/logo.png";
+import HamburgerIcon from "/public/images/menu-icon.png";
+import CloseIcon from "/public/Images/clear-icon.png";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -15,8 +15,8 @@ const Header = () => {
       <div className="logo pt-2 w-[150px] md:w-[200px]">
         <Link href="/">
           <Image
-            src={TogetherAppLogo}
-            className="app-logo pl-[20px] py-4 pt-2 w-[200px]"
+            src={TogetherLogo}
+            className="app-logo pl-[20px] py-4 pt-2 w-[200px] h-auto"
             alt="together-app_logo"
             width={200}
             height={200}

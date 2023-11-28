@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LoginForm from "@/components/login-form";
-import TogetherAppLogo from "public/Images/logo.png";
+import TogetherLogo from "/public/Images/logo.png";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <main className="flex md:min-h-screen items-center p-24 bg-yellow md:w-3/4">
         <div className="logo">
           <Image
-            src={TogetherAppLogo}
+            src={TogetherLogo}
             className="app-logo "
             alt="together-app_logo"
             width={500}
