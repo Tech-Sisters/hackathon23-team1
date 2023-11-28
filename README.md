@@ -43,8 +43,10 @@ Open your browser and visit http://localhost:3000 to view the Together app.
 
 ## Authors and acknowledgment
 
-Fabiha Hassan: Backend Dev |
-| Lawal Khodijat: Frontend Dev | Zaain Ahmed Naseem: Frontend Dev | Rabia Ahmed: Product Manager
+Fabiha Hassan: Backend Dev <br />
+Lawal Khodijat: Frontend Dev <br />
+Zaain Ahmed Naseem: Frontend Dev <br />
+Rabia Ahmed: Product Manager <br />
 
 Notes
 
