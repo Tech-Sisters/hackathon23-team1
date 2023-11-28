@@ -1,11 +1,6 @@
 import React from "react";
 import Layout from "@/components/ui/layout";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import {Accordion,AccordionContent,AccordionItem,AccordionTrigger,} from "@/components/ui/accordion";
 
 const Help = () => {
   return (
