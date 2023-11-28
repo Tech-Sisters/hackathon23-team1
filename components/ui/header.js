@@ -11,8 +11,8 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex flex-col mx-auto h-0 md:h-10 md:w-screen font-montserrat w-screen bg-yellow">
-      <div className="logo pt-2 w-[200px]">
+    <header className="flex flex-col mx-auto h-20 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink">
+      <div className="logo pt-2 w-[150px] md:w-[200px]">
         <Link href="/">
           <Image
             src={TogetherAppLogo}
@@ -39,8 +39,8 @@ const Header = () => {
           />
         </button>
         {toggle && (
-          <div className="menu-container  ">
-            <ul className="menu-group absolute flex flex-col items-left top-10 w-full ">
+          <div className="menu-container ">
+            <ul className="menu-group z-10 absolute flex flex-col items-left top-10 w-full ">
               <button
                 className="close-btn absolute top-[48px] right-[7px] z-10"
                 onClick={() => setToggle(!toggle)}
@@ -54,7 +54,7 @@ const Header = () => {
                 />
               </button>
               {toggle && (
-                <ul className="menu-group z-50 flex flex-col absolute top-8 left-0 b-0 mb-0 bg-pink  w-screen text-sm items-left  font-700 px-3 z-100 text-white pb-4">
+                <ul className="menu-group  flex flex-col absolute top-8 left-0 b-0 mb-0 bg-pink w-screen text-sm items-left  font-700 px-3 z-100 text-white pb-4">
                   <Link href="/find-events">
                     <li className="menu-group_item pt-6 hover:text-yellow">
                       Find Events

@@ -4,13 +4,13 @@ import {Accordion,AccordionContent,AccordionItem,AccordionTrigger,} from "@/comp
 
 const Help = () => {
   return (
-    <main className="flex h-screen flex-col items-center bg-yellow">
+    <main className="flex h-20 flex-col items-center bg-yellow">
       <div className="layout">
         {" "}
         <Layout />
       </div>
-      <section className="help bg-white flex flex-wrap mt-[105px] h-full w-full text-center">
-        <div className="help_container my-8 mx-auto w-full md:w-1/2 text-left">
+      <section className="help bg-white flex flex-wrap mt-[50px] h-full w-full text-center">
+        <div className="help_container my-0 md:my-8 mx-auto w-full md:w-1/2 text-left">
           <h1 className="text-center text-2xl mb-10 font-700 font-montserrat text-black mx-auto">
             FAQs
           </h1>

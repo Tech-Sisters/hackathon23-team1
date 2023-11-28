@@ -1,7 +1,7 @@
 const ImagePaths = {
   placeholder: "/images/muslim-women.jpg",
-  bookclub: "/images/book-club.png",
-  lecture: "/images/lecture.png",
+  bookclub: "/images/bookclub.jpg",
+  lecture: "/images/lecture.jpg",
   meetup: "/images/meetup.jpg",
   sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
   techworkshop: "/images/techworkshop.jpg",

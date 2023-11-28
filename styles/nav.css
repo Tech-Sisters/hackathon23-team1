@@ -1,11 +1,11 @@
 nav {
-  height: 70px;
+  height: 50px;
   position: flex;
   top: 135px;
   right: 0px;
   left: 0px;
   color: white;
-  background-color: #e5707e;
+  background: linear-gradient(to right, rgb(232, 233, 161), rgb(229, 112, 126));
 }
 
 .nav-list {
@@ -33,5 +33,5 @@ li {
 }
 
 li:hover {
-  font: "#E8E9A1";
+  color: #e8e9a1;
 }
