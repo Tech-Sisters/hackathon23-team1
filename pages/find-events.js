@@ -1,9 +1,9 @@
-import Layout from "@/components/ui/layout";
 import FindEventsService from "../services/findEventsService";
+import Layout from "@/components/ui/layout";
 
 export default function FindEvents() {
   return (
-    <main className="flex h-20 flex-col items-center bg-yellow">
+    <main className="flex h-20 flex-col items-center">
       <div className="layout">
         {" "}
         <Layout />

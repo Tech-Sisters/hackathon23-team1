@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import Input from "../components/input";
+import React, { useState } from "react";
+import Input from "@/components/input";
 import Layout from "@/components/ui/layout";
 
 const Signup = () => {
@@ -18,7 +17,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex h-screen flex-col items-center bg-yellow">
+    <main className="flex h-screen flex-col items-center ">
       <Layout />
 
       <section className=" bg-white justify-center flex flex-wrap mt-[50px] h-full w-full ">

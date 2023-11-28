@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import Layout from "@/components/ui/layout";
+import React from "react";
 import CreateEventsService from "../services/createEventsService";
+import Layout from "@/components/ui/layout";
 
 const CreateEvents = () => {
   return (
-    <main className="flex h-20 flex-col items-center bg-yellow">
+    <main className="flex h-20 flex-col items-center ">
       <div className="layout">
         {" "}
         <Layout />

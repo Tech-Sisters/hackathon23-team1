@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import TogetherAppLogo from "public/images/logo.png";
-import Nav from "./nav.js";
 import Link from "next/link";
+import Nav from "./nav.js";
+import TogetherAppLogo from "public/images/logo.png";
 import HamburgerIcon from "public/images/menu-icon.png";
 import CloseIcon from "public/Images/clear-icon.png";
 
@@ -11,7 +11,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="flex flex-col mx-auto h-20 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink">
+    <header className="flex flex-col mx-auto h-20 md:h-20 md:w-screen font-montserrat w-screen bg-gradient-to-r from-yellow to-pink ">
       <div className="logo pt-2 w-[150px] md:w-[200px]">
         <Link href="/">
           <Image
@@ -27,14 +27,14 @@ const Header = () => {
 
       <div className="visible md:invisible">
         <button
-          className="hamburger-menu bg-none absolute right-5 top-1 mt-5 md:invisible "
+          className="hamburger-menu bg-none absolute right-5 top-0 mt-5 md:invisible"
           onClick={() => setToggle(!toggle)}
         >
           <Image
             src={HamburgerIcon}
             className="hamburger-menu"
             alt="hamburger-menu_icon"
-            height={10}
+            height={25}
             width={25}
           />
         </button>
