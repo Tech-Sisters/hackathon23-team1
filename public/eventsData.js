@@ -16,7 +16,7 @@ const placeholderEvents = [
     longitude: 101.6119,
     imageKey: "lecture",
     time: "Sun, Dec 20 - 08:00 AM",
-    place: "Times Square Mall, Convention Center, PJ",
+    place: "Times Square Muslim Center, PJ",
     country: "Malaysia",
   },
   {
@@ -42,8 +42,8 @@ const placeholderEvents = [
   {
     id: 5,
     name: "Tech Workshop",
-    latitude: 3.0738,
-    longitude: 101.5183,
+    latitude: 3.123,
+    longitude: 101.597,
     imageKey: "techworkshop",
     time: "Wed, Apr 16 - 03:00 PM",
     place: "TechHub PJ, Jaya",
@@ -72,8 +72,8 @@ const placeholderEvents = [
   {
     id: 8,
     name: "Kids Meetup",
-    latitude: 3.123,
-    longitude: 101.597,
+    latitude: 3.0738,
+    longitude: 101.5183,
     imageKey: "kidsmeetup",
     time: "Wed, Jan 17 - 05:30 PM",
     place: "Bird Park, PJ",

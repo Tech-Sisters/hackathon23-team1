@@ -49,7 +49,7 @@ const LoginForm = () => {
             <span className="h-[2px] bg-gray-400 w-full"></span>
           </div>
           <Link href="/signup-form">
-            <div className="border border-orange flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer bg-orange mt-3">
+            <div className=" border-orange h-10 flex justify-center items-center p-3 rounded-[4rem] gap-x-1 cursor-pointer hover:bg-turquoise bg-orange mt-3">
               <span className="text-white font-medium">Sign up</span>
             </div>
           </Link>
