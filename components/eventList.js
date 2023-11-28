@@ -13,10 +13,6 @@ const EventList = ({ events, country }) => {
     setSelectedEvent(event);
   };
 
-  // const handleCloseDetails = () => {
-  //   setSelectedEvent(null);
-  // };
-
   return (
     <div className="flex flex-col w-full mb-28">
       <h2 className="text-2xl font-semibold text-black mt-8 text-center md:text-left mb-4">

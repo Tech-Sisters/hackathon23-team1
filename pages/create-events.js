@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import Layout from "@/components/ui/layout";
+import React from "react";
 import CreateEventsService from "../services/createEventsService";
+import Layout from "@/components/ui/layout";
 
 const CreateEvents = () => {
   return (

@@ -1,5 +1,5 @@
-import Layout from "@/components/ui/layout";
 import FindEventsService from "../services/findEventsService";
+import Layout from "@/components/ui/layout";
 
 export default function FindEvents() {
   return (

@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import Input from "../components/input";
+import React, { useState } from "react";
+import Input from "@/components/input";
 import Layout from "@/components/ui/layout";
 
 const Signup = () => {
