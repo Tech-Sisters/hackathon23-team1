@@ -1,4 +1,4 @@
-Together App
+# Together App
 
 This app helps users discover and create events in their local area.
 
