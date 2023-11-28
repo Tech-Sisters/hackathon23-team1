@@ -22,7 +22,7 @@ const Signup = () => {
       <Layout />
 
       <section className=" bg-white justify-center flex flex-wrap mt-[50px] h-full w-full ">
-        <form className="signup-form mx-auto p-7 border-r-white w-1/2 rounded-md shadow-md justify-center relative z-10 mt-20">
+        <form className="signup-form w-[500px] mx-auto p-7 border-r-white md:w-1/2 rounded-md shadow-md  justify-center relative  mt-20">
           <h1 className="text-center text-2xl mb-10 mt-[-60px] font-700 font-montserrat text-black ">
             Create An Account
           </h1>

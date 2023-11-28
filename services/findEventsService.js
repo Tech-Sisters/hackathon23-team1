@@ -92,7 +92,7 @@ const FindEventsService = () => {
 
   //static image paths
   const imagePaths = {
-    bookclub: "/images/book-club.png",
+    bookclub: "/Images/bookclub.jpg",
     lecture: "/images/lecture.png",
     meetup: "/images/meetup.jpg",
     sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
