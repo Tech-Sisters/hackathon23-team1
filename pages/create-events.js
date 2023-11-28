@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import Layout from "@/components/ui/layout";
+import React from "react";
 import CreateEventsService from "../services/createEventsService";
+import Layout from "@/components/ui/layout";
 
 const CreateEvents = () => {
   return (
-    <main className="flex h-screen flex-col items-center bg-yellow">
+    <main className="flex h-20 flex-col items-center bg-yellow">
       <div className="layout">
         {" "}
         <Layout />
       </div>
-      <section className="create-events bg-white justify-center flex flex-wrap mt-[105px] h-full w-full ">
+      <section className="create-events bg-white justify-center flex flex-wrap mt-[50px] h-full w-full ">
         <CreateEventsService />
       </section>
     </main>

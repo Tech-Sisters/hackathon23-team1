@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import Input from "../components/input";
+import React, { useState } from "react";
+import Input from "@/components/input";
 import Layout from "@/components/ui/layout";
 
 const Signup = () => {
@@ -8,7 +7,6 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    country: "",
   });
   const handleInputField = (e) => {
     const { name, value } = e.target;
@@ -78,22 +76,13 @@ const Signup = () => {
                   value={signPayload.password}
                 />
               </div>
-              <div className="flex gap-x-8 mb-6">
-                <Input
-                  type="country"
-                  placeholder="Country of Residence"
-                  name="country"
-                  onChange={handleInputField}
-                  value={signPayload.country}
-                />
-              </div>
             </div>
             <div className="flex items-center justify-center">
               <button
                 className="bg-turquoise hover:bg-yellow text-white font-bold px-10 py-1 rounded-md mx-4 mt-4 h-10 focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Submit
+                Create Account
               </button>
             </div>
           </div>

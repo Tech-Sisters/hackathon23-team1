@@ -8,6 +8,7 @@ export default async (req, res) => {
   if (req.method === "POST") {
     try {
       const { name, place, country, time, description } = req.body;
+      console.log(name);
       const event = await db.collection("events").insertOne({
         name,
         place,

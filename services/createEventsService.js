@@ -12,6 +12,7 @@ const EventsForm = () => {
   };
 
   const [eventFormValues, setEventFormValues] = useState(initialValues);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +21,8 @@ const EventsForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
+
     console.log(eventFormValues);
     await fetch("http://localhost:3000/api/events", {
       method: "POST",
@@ -31,14 +34,15 @@ const EventsForm = () => {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
+    setIsSubmitted(false);
 
-    window.location.reload(false); // redirect to another page e.g. events page
+    // window.location.reload(false); // redirect to another page e.g. events page
   };
 
   return (
     <div className="create-events_container flex flex-wrap my-8 md:mx-40 w-screen">
       <form
-        className="events-form mx-10 md:mx-auto p-7 py-20 border-r-white w-screen  h-[600px] md:w-[500px] md:h-[90%] lg:w-1/2 lg:h-[640px] rounded-md shadow-md justify-left relative z-10"
+        className="events-form mx-10 md:mx-auto p-7 py-20 border-r-white w-screen ] h-[600px] md:w-[500px] md:h-[90%] lg:w-1/2 lg:h-[640px] rounded-md shadow-md justify-left relative "
         onSubmit={handleSubmit}
       >
         <h1 className="text-center text-2xl mb-10 mt-[-60px] font-700 font-montserrat text-black">
@@ -82,7 +86,7 @@ const EventsForm = () => {
             id="country"
             name="country"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -96,7 +100,7 @@ const EventsForm = () => {
             id="time"
             name="time"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
 
@@ -113,7 +117,7 @@ const EventsForm = () => {
             id="description"
             name="description"
             onChange={handleChange}
-            className="bg-orange appearance-none border-1 border-orange bg-opacity-[25%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
+            className="bg-orange appearance-none border-1 border-orange bg-opacity-[15%] rounded-md w-full py-2 px-3 text-pink leading-tight focus:outline-none focus:border-pink"
           />
         </div>
         <div className="flex items-center justify-center">
@@ -124,6 +128,11 @@ const EventsForm = () => {
             Submit
           </button>{" "}
         </div>
+        {isSubmitted ? (
+          <div className="w-full text-center font-bold text-turquoise font-hind text-lg mt-4">
+            Submitted!
+          </div>
+        ) : null}
       </form>
 
       <div className="flex flex-col md:h-[90%] lg:w-1/2 rounded-md shadow-md align-top justify-center bg-orange xl:w-[550px] invisible lg:visible">
