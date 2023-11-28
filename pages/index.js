@@ -4,8 +4,8 @@ import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-row items-center justify-between  ">
-      <main className="flex min-h-screen items-center p-24 bg-yellow w-2/3">
+    <div className="md:flex min-h-screen flex-row items-center justify-between  ">
+      <main className="flex md:min-h-screen items-center p-24 bg-yellow md:w-3/4">
         <div className="logo">
           <Image
             src={TogetherAppLogo}

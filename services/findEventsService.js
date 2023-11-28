@@ -89,6 +89,25 @@ const FindEventsService = () => {
     }
   }, [userLocation, events, radius]);
 
+
+  //static image paths
+  const imagePaths = {
+    bookclub: "/images/book-club.png",
+    lecture: "/images/lecture.png",
+    meetup: "/images/meetup.jpg",
+    sunwaypyramidmall: "/images/sunwaypyramidmall.jpg",
+    techworkshop: "/images/techworkshop.jpg",
+    cycling: "/images/cycling.jpg",
+    foodfestival: "/images/foodfestival.jpg",
+    cycling: "/images/cycling.jpg",
+    kidsmeetup: "/images/kidsmeetup.jpg",
+    islamicbookclub: "/Images/islamic-bookclub.jpg",
+    londonfoodfestival: "/Images/londonfoodfestival.jpg",
+    quranstudy: "/Images/quranstudy.jpg",
+    islamicartexhibition: "/Images/islamic-artexhibition.jpg",
+  };
+
+
   //search button functionality
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);

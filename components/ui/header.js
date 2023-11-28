@@ -5,7 +5,7 @@ import TogetherAppLogo from "public/images/logo.png";
 import Nav from "./nav.js";
 import Link from "next/link";
 import HamburgerIcon from "public/images/menu-icon.png";
-import CloseIcon from "public/images/clear-icon.png";
+import CloseIcon from "public/Images/clear-icon.png";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
