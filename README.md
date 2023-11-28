@@ -52,3 +52,4 @@ Notes
 
     This project uses Next.js for server-side rendering.
     Tailwind CSS is used for styling.
+    Mongodb atlas is used for the database.
