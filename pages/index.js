@@ -1,6 +1,6 @@
 import Image from "next/image";
-import TogetherAppLogo from "public/Images/logo.png";
 import LoginForm from "@/components/login-form";
+import TogetherAppLogo from "public/Images/logo.png";
 
 export default function Home() {
   return (
@@ -15,7 +15,6 @@ export default function Home() {
             height={500}
           />
         </div>
-
       </main>
       <LoginForm className="bg-white w-1/4 min-h-screen" />
     </div>

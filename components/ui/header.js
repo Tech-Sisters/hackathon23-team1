@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import TogetherAppLogo from "public/images/logo.png";
-import Nav from "./nav.js";
 import Link from "next/link";
+import Nav from "./nav.js";
+import TogetherAppLogo from "public/images/logo.png";
 import HamburgerIcon from "public/images/menu-icon.png";
 import CloseIcon from "public/Images/clear-icon.png";
 

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import allEvents from "../public/eventsData";
-import SearchIcon from "public/Images/search-icon.png";
-import UserIcon from "public/Images/user-icon.png";
-import ClearIcon from "public/Images/clear-icon.png";
 import EventList from "@/components/eventList";
 import EventDetails from "@/components/eventDetails";
 import LoadingSpinner from "@/components/ui/loadingspinner";
 import NoResults from "@/components/noResults";
+import SearchIcon from "public/Images/search-icon.png";
+import UserIcon from "public/Images/user-icon.png";
+import ClearIcon from "public/Images/clear-icon.png";
 import allImagePaths from "@/public/imagePaths";
 
 const FindEventsService = () => {
@@ -89,7 +88,6 @@ const FindEventsService = () => {
     }
   }, [userLocation, events, radius]);
 
-
   //static image paths
   const imagePaths = {
     bookclub: "/images/book-club.png",
@@ -106,7 +104,6 @@ const FindEventsService = () => {
     quranstudy: "/Images/quranstudy.jpg",
     islamicartexhibition: "/Images/islamic-artexhibition.jpg",
   };
-
 
   //search button functionality
   const handleSearchInputChange = (e) => {
